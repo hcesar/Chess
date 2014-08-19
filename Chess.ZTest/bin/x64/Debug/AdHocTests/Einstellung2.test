@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<test>
+  <name>Einsellung Effect 1</name>
+  <instruction>Decida a melhor jogada para as peças brancas.</instruction>
+  <startingFen>nkn5/1bpq2p1/4p1P1/QNBpPp1p/3P3P/4N1P1/1P6/1K6 w - - 0 1</startingFen>
+  <playerMoves>1</playerMoves>
+  <aiLevel>Medium</aiLevel>
+  <waitBeforeMove>00:00:00</waitBeforeMove>
+  <playerColor>White</playerColor>
+</test>

@@ -5,3 +5,10 @@ D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\bin
 D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\obj\Debug\Chess.Sensors.csprojResolveAssemblyReference.cache
 D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\obj\Debug\Chess.Sensors.dll
 D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\obj\Debug\Chess.Sensors.pdb
+D:\Projetos\Chess\Chess.Sensors\bin\Debug\Chess.Sensors.dll
+D:\Projetos\Chess\Chess.Sensors\bin\Debug\Chess.Sensors.pdb
+D:\Projetos\Chess\Chess.Sensors\bin\Debug\Chess.dll
+D:\Projetos\Chess\Chess.Sensors\bin\Debug\Chess.pdb
+D:\Projetos\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.csprojResolveAssemblyReference.cache
+D:\Projetos\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.dll
+D:\Projetos\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.pdb

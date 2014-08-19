@@ -75,7 +75,11 @@ namespace Chess.App
             var board = this.boardCanvas.StartNew(config.White, config.Black);
             spectatorServer = new SpectatorServer(board);
 
-            var writer = new IO.ChessStreamWriter(board, new Sensors.SensorContainer(board, new Sensors.MouseSensor(this.boardCanvas)), DateTime.Now.ToString("yyyMMddmmss") + ".chess");
+            var mouseSensor = new Sensors.MouseSensor(this.boardCanvas);
+            var eyeTrackerSensor = new Sensors.TobiiEyeTracker.EyeTrackerSensor(this.boardCanvas);
+            var sensorContainer = new Sensors.SensorContainer(board, mouseSensor, eyeTrackerSensor);
+
+            var writer = new IO.ChessStreamWriter(board, sensorContainer, DateTime.Now.ToString("yyyMMddmmss") + ".chess");
 
             if (config.White.IsReady && config.Black.IsReady)
                 board.Start();
@@ -139,8 +143,12 @@ namespace Chess.App
             if (action is SensorAction)
             {
                 var sensorAction = action as SensorAction;
-                var mouseData = sensorAction.Data as Chess.Sensors.MouseSensorData;
-                this.boardCanvas.SetEyePosition(mouseData.Location);
+                //var mouseData = sensorAction.Data as Chess.Sensors.MouseSensorData;
+                //this.boardCanvas.SetEyePosition(mouseData.Location);
+
+                var eyeTracker = sensorAction.Data as Chess.Sensors.TobiiEyeTracker.EyeTrackerSensorData;
+                this.boardCanvas.SetEyePosition(eyeTracker.LeftPosition);
+
             }
         }
 

@@ -1,0 +1,5 @@
+D:\Projetos\Chess\Chess\bin\x64\Debug\Chess.dll
+D:\Projetos\Chess\Chess\bin\x64\Debug\Chess.pdb
+D:\Projetos\Chess\Chess\obj\x64\Debug\Chess.csprojResolveAssemblyReference.cache
+D:\Projetos\Chess\Chess\obj\x64\Debug\Chess.dll
+D:\Projetos\Chess\Chess\obj\x64\Debug\Chess.pdb

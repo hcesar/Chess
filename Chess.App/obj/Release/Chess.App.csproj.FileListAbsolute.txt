@@ -20,3 +20,6 @@ D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.App\obj\Rel
 D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.App\obj\Release\Chess.App.csproj.GenerateResource.Cache
 D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.App\obj\Release\Chess.App.exe
 D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.App\obj\Release\Chess.App.pdb
+D:\Projetos\Chess\Chess.App\bin\Release\Chess.App.exe.config
+D:\Projetos\Chess\Chess.App\obj\Release\Chess.App.exe
+D:\Projetos\Chess\Chess.App\obj\Release\Chess.App.pdb

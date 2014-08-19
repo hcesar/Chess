@@ -1,0 +1,15 @@
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Engines\polyglot.exe
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Engines\StockFish.exe
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Engines\StockFish.ini
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.IO.dll.config
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.IO.dll
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.IO.pdb
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.dll
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.Sensors.dll
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.WinBoard.dll
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.Sensors.pdb
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.WinBoard.pdb
+D:\Projetos\Chess\Chess.IO\bin\x64\Debug\Chess.pdb
+D:\Projetos\Chess\Chess.IO\obj\x64\Debug\Chess.IO.csprojResolveAssemblyReference.cache
+D:\Projetos\Chess\Chess.IO\obj\x64\Debug\Chess.IO.dll
+D:\Projetos\Chess\Chess.IO\obj\x64\Debug\Chess.IO.pdb
