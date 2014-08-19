@@ -1,0 +1,11 @@
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Engines\polyglot.exe
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Engines\StockFish.exe
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Engines\StockFish.ini
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Chess.WinBoard.dll.config
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Chess.WinBoard.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Chess.WinBoard.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Chess.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\bin\Release\Chess.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\obj\Release\Chess.WinBoard.csprojResolveAssemblyReference.cache
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\obj\Release\Chess.WinBoard.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.WinBoard\obj\Release\Chess.WinBoard.pdb

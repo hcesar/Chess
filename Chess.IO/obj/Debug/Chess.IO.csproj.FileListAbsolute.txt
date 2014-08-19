@@ -1,0 +1,15 @@
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Engines\polyglot.exe
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Engines\StockFish.exe
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Engines\StockFish.ini
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.IO.dll.config
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.IO.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.IO.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.Sensors.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.WinBoard.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.Sensors.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.WinBoard.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\bin\Debug\Chess.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\obj\Debug\Chess.IO.csprojResolveAssemblyReference.cache
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\obj\Debug\Chess.IO.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.IO\obj\Debug\Chess.IO.pdb

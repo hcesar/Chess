@@ -1,0 +1,229 @@
+1404246328.220 POLYGLOT *** LOGFILE OPENED ***
+1404246328.220 POLYGLOT *** LOGFILE OPENED ***
+1404246328.220 PolyGlot 1.4.66b by Fabien Letouzey.
+1404246328.220 POLYGLOT *** START ***
+1404246328.220 POLYGLOT INI file "stockfish.ini"
+1404246328.223 Adapter->Engine: uci
+1404246328.493 Engine->Adapter: Stockfish 5 64 SSE4.2 by Tord Romstad, Marco Costalba and Joona Kiiski
+1404246328.767 Engine->Adapter: id name Stockfish 5 64 SSE4.2
+1404246328.767 Engine->Adapter: id author Tord Romstad, Marco Costalba and Joona Kiiski
+1404246328.767 Engine->Adapter: 
+1404246328.767 Engine->Adapter: option name Write Debug Log type check default false
+1404246328.767 Engine->Adapter: option name Write Search Log type check default false
+1404246328.767 Engine->Adapter: option name Search Log Filename type string default SearchLog.txt
+1404246328.767 Engine->Adapter: option name Book File type string default book.bin
+1404246328.767 Engine->Adapter: option name Best Book Move type check default false
+1404246328.767 Engine->Adapter: option name Contempt Factor type spin default 0 min -50 max 50
+1404246328.767 Engine->Adapter: option name Mobility (Midgame) type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Mobility (Endgame) type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Pawn Structure (Midgame) type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Pawn Structure (Endgame) type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Passed Pawns (Midgame) type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Passed Pawns (Endgame) type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Space type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Aggressiveness type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Cowardice type spin default 100 min 0 max 200
+1404246328.767 Engine->Adapter: option name Min Split Depth type spin default 0 min 0 max 12
+1404246328.767 Engine->Adapter: option name Threads type spin default 1 min 1 max 128
+1404246328.767 Engine->Adapter: option name Hash type spin default 32 min 1 max 16384
+1404246328.767 Engine->Adapter: option name Clear Hash type button
+1404246328.767 Engine->Adapter: option name Ponder type check default true
+1404246328.767 Engine->Adapter: option name OwnBook type check default false
+1404246328.767 Engine->Adapter: option name MultiPV type spin default 1 min 1 max 500
+1404246328.767 Engine->Adapter: option name Skill Level type spin default 20 min 0 max 20
+1404246328.767 Engine->Adapter: option name Emergency Move Horizon type spin default 40 min 0 max 50
+1404246328.767 Engine->Adapter: option name Emergency Base Time type spin default 60 min 0 max 30000
+1404246328.767 Engine->Adapter: option name Emergency Move Time type spin default 30 min 0 max 5000
+1404246328.767 Engine->Adapter: option name Minimum Thinking Time type spin default 20 min 0 max 5000
+1404246328.767 Engine->Adapter: option name Slow Mover type spin default 80 min 10 max 1000
+1404246328.767 Engine->Adapter: option name UCI_Chess960 type check default false
+1404246328.767 Engine->Adapter: uciok
+1404246328.767 POLYGLOG OPTIONS 
+1404246328.767 POLYGLOT [PolyGlot] EngineName="StockFish"
+1404246328.767 POLYGLOT [PolyGlot] EngineDir="."
+1404246328.767 POLYGLOT [PolyGlot] EngineCommand="stockfish"
+1404246328.767 POLYGLOT [PolyGlot] Book="false"
+1404246328.767 POLYGLOT [PolyGlot] BookFile="book.bin"
+1404246328.767 POLYGLOT [PolyGlot] Log="true"
+1404246328.767 POLYGLOT [PolyGlot] LogFile="stockfish.log"
+1404246328.767 POLYGLOT [PolyGlot] Resign="true"
+1404246328.767 POLYGLOT [PolyGlot] ResignScore="600"
+1404246328.767 POLYGLOT [Engine] Hash="128"
+1404246328.767 POLYGLOT [Engine] Threads="8"
+1404246328.767 POLYGLOT [Engine] OwnBook="false"
+1404246328.767 POLYGLOT [Engine] Book File="book.bin"
+1404246328.767 POLYGLOT [Engine] Use Search Log="false"
+1404246328.767 POLYGLOT [Engine] Mobility (Middle Game)="100"
+1404246328.768 POLYGLOT [Engine] Mobility (Endgame)="100"
+1404246328.768 POLYGLOT [Engine] Pawn Structure (Middle Game)="100"
+1404246328.768 POLYGLOT [Engine] Pawn Structure (Endgame)="100"
+1404246328.768 POLYGLOT [Engine] Passed Pawns (Middle Game)="100"
+1404246328.768 POLYGLOT [Engine] Passed Pawns (Endgame)="100"
+1404246328.768 POLYGLOT [Engine] Aggressiveness="100"
+1404246328.768 POLYGLOT [Engine] Cowardice="100"
+1404246328.768 POLYGLOT [Engine] King Safety Curve="Quadratic"
+1404246328.768 POLYGLOT [Engine] Quadratic="Linear"
+1404246328.768 POLYGLOT [Engine] King Safety Coefficient="40"
+1404246328.768 POLYGLOT [Engine] King Safety X Intercept="0"
+1404246328.768 POLYGLOT [Engine] King Safety Max Slope="30"
+1404246328.768 POLYGLOT [Engine] King Safety Max Value="500"
+1404246328.768 POLYGLOT [Engine] Queen Contact Check Bonus="3"
+1404246328.768 POLYGLOT [Engine] Queen Check Bonus="2"
+1404246328.768 POLYGLOT [Engine] Rook Check Bonus="1"
+1404246328.768 POLYGLOT [Engine] Bishop Check Bonus="1"
+1404246328.768 POLYGLOT [Engine] Knight Check Bonus="1"
+1404246328.768 POLYGLOT [Engine] Discovered Check Bonus="3"
+1404246328.768 POLYGLOT [Engine] Mate Threat Bonus="3"
+1404246328.768 POLYGLOT [Engine] Check Extension (PV nodes)="2"
+1404246328.768 POLYGLOT [Engine] Check Extension (non-PV nodes)="1"
+1404246328.768 POLYGLOT [Engine] Single Reply Extension (PV nodes)="2"
+1404246328.768 POLYGLOT [Engine] Single Reply Extension (non-PV nodes)="2"
+1404246328.768 POLYGLOT [Engine] Mate Threat Extension (PV nodes)="0"
+1404246328.768 POLYGLOT [Engine] Mate Threat Extension (non-PV nodes)="0"
+1404246328.768 POLYGLOT [Engine] Pawn Push to 7th Extension (PV nodes)="1"
+1404246328.768 POLYGLOT [Engine] Pawn Push to 7th Extension (non-PV nodes)="1"
+1404246328.768 POLYGLOT [Engine] Passed Pawn Extension (PV nodes)="1"
+1404246328.768 POLYGLOT [Engine] Passed Pawn Extension (non-PV nodes)="0"
+1404246328.768 POLYGLOT [Engine] Pawn Endgame Extension (PV nodes)="2"
+1404246328.768 POLYGLOT [Engine] Pawn Endgame Extension (non-PV nodes)="2"
+1404246328.768 POLYGLOT [Engine] Full Depth Moves (PV nodes)="14"
+1404246328.768 POLYGLOT [Engine] Full Depth Moves (non-PV nodes)="3"
+1404246328.768 POLYGLOT [Engine] Threat Depth="5"
+1404246328.768 POLYGLOT [Engine] Futility Pruning (Main Search)="true"
+1404246328.768 POLYGLOT [Engine] Futility Pruning (Quiescence Search)="true"
+1404246328.768 POLYGLOT [Engine] Randomness="0"
+1404246328.768 POLYGLOT [Engine] Minimum Split Depth="4"
+1404246328.768 POLYGLOT [Engine] Maximum Number of Threads per Split Point="5"
+1404246328.768 POLYGLOT Setting PolyGlot option "EngineName=StockFish"
+1404246328.768 POLYGLOT Setting PolyGlot option "EngineDir=."
+1404246328.768 POLYGLOT Setting PolyGlot option "EngineCommand=stockfish"
+1404246328.768 POLYGLOT Setting PolyGlot option "Book=false"
+1404246328.768 POLYGLOT Setting PolyGlot option "BookFile=book.bin"
+1404246328.768 POLYGLOT Setting PolyGlot option "Log=true"
+1404246328.768 POLYGLOT *** SWITCHING LOGFILE ***
+1404246328.768 POLYGLOT NEW LOGFILE "stockfish.log"
+1404246328.768 POLYGLOT *** LOGFILE OPENED ***
+1404246328.768 POLYGLOT Setting PolyGlot option "LogFile=stockfish.log"
+1404246328.768 POLYGLOT *** SWITCHING LOGFILE ***
+1404246328.768 POLYGLOT NEW LOGFILE "stockfish.log"
+1404246328.771 POLYGLOT *** LOGFILE OPENED ***
+1404246328.771 POLYGLOT Setting PolyGlot option "Resign=true"
+1404246328.771 POLYGLOT Setting PolyGlot option "ResignScore=600"
+1404246328.771 Adapter->Engine: setoption name Hash value 128
+1404246328.771 Adapter->Engine: setoption name Threads value 8
+1404246328.771 POLYGLOT Not sending option "OwnBook" since it already has the correct value.
+1404246328.771 POLYGLOT Not sending option "Book File" since it already has the correct value.
+1404246328.771 POLYGLOT Not sending option "Mobility (Endgame)" since it already has the correct value.
+1404246328.771 POLYGLOT Not sending option "Pawn Structure (Endgame)" since it already has the correct value.
+1404246328.771 POLYGLOT Not sending option "Passed Pawns (Endgame)" since it already has the correct value.
+1404246328.771 POLYGLOT Not sending option "Aggressiveness" since it already has the correct value.
+1404246328.771 POLYGLOT Not sending option "Cowardice" since it already has the correct value.
+1404246328.771 POLYGLOT *** Mainloop started ***
+1404246331.800 GUI->Adapter: xboard
+1404246360.377 GUI->Adapter: protover 2
+1404246360.377 Adapter->GUI: feature done=0
+1404246360.377 Adapter->GUI: feature analyze=1
+1404246360.377 Adapter->GUI: feature colors=0
+1404246360.377 Adapter->GUI: feature draw=1
+1404246360.377 Adapter->GUI: feature ics=1
+1404246360.377 Adapter->GUI: feature myname="StockFish"
+1404246360.378 Adapter->GUI: feature name=1
+1404246360.378 Adapter->GUI: feature pause=0
+1404246360.378 Adapter->GUI: feature ping=1
+1404246360.378 Adapter->GUI: feature playother=1
+1404246360.378 Adapter->GUI: feature sigint=1
+1404246360.378 Adapter->GUI: feature reuse=1
+1404246360.378 Adapter->GUI: feature san=0
+1404246360.379 Adapter->GUI: feature setboard=1
+1404246360.379 Adapter->GUI: feature sigint=0
+1404246360.379 Adapter->GUI: feature sigterm=0
+1404246360.379 Adapter->GUI: feature time=1
+1404246360.379 Adapter->GUI: feature usermove=1
+1404246360.379 Adapter->GUI: feature nps=1
+1404246360.379 Adapter->GUI: feature memory=1
+1404246360.379 Adapter->GUI: feature smp=1
+1404246360.380 Adapter->GUI: feature egt=""
+1404246360.380 Adapter->GUI: feature variants="normal,fischerandom"
+1404246360.380 Adapter->GUI: feature option="Write Debug Log -check 0"
+1404246360.381 Adapter->GUI: feature option="Write Search Log -check 0"
+1404246360.381 Adapter->GUI: feature option="Search Log Filename -file SearchLog.txt"
+1404246360.381 Adapter->GUI: feature option="Book File -file book.bin"
+1404246360.381 Adapter->GUI: feature option="Best Book Move -check 0"
+1404246360.381 Adapter->GUI: feature option="Contempt Factor -spin 0 -50 50"
+1404246360.381 Adapter->GUI: feature option="Mobility (Midgame) -spin 100 0 200"
+1404246360.382 Adapter->GUI: feature option="Mobility (Endgame) -spin 100 0 200"
+1404246360.382 Adapter->GUI: feature option="Pawn Structure (Midgame) -spin 100 0 200"
+1404246360.382 Adapter->GUI: feature option="Pawn Structure (Endgame) -spin 100 0 200"
+1404246360.382 Adapter->GUI: feature option="Passed Pawns (Midgame) -spin 100 0 200"
+1404246360.382 Adapter->GUI: feature option="Passed Pawns (Endgame) -spin 100 0 200"
+1404246360.382 Adapter->GUI: feature option="Space -spin 100 0 200"
+1404246360.383 Adapter->GUI: feature option="Aggressiveness -spin 100 0 200"
+1404246360.383 Adapter->GUI: feature option="Cowardice -spin 100 0 200"
+1404246360.383 Adapter->GUI: feature option="Min Split Depth -spin 0 0 12"
+1404246360.383 Adapter->GUI: feature option="Clear Hash -button"
+1404246360.383 Adapter->GUI: feature option="OwnBook -check 0"
+1404246360.383 Adapter->GUI: feature option="MultiPV -spin 1 1 500"
+1404246360.383 Adapter->GUI: feature option="Skill Level -spin 20 0 20"
+1404246360.384 Adapter->GUI: feature option="Emergency Move Horizon -spin 40 0 50"
+1404246360.384 Adapter->GUI: feature option="Emergency Base Time -spin 60 0 30000"
+1404246360.384 Adapter->GUI: feature option="Emergency Move Time -spin 30 0 5000"
+1404246360.384 Adapter->GUI: feature option="Minimum Thinking Time -spin 20 0 5000"
+1404246360.384 Adapter->GUI: feature option="Slow Mover -spin 80 10 1000"
+1404246360.385 Adapter->GUI: feature option="Polyglot SettingsFile -file stockfish.ini"
+1404246360.385 Adapter->GUI: feature option="Polyglot Log -check 1"
+1404246360.388 Adapter->GUI: feature option="Polyglot LogFile -file stockfish.log"
+1404246360.389 Adapter->GUI: feature option="Polyglot Resign -check 1"
+1404246360.390 Adapter->GUI: feature option="Polyglot ResignMoves -spin 3 0 10000"
+1404246360.391 Adapter->GUI: feature option="Polyglot ResignScore -spin 600 0 10000"
+1404246360.392 Adapter->GUI: feature option="Polyglot Book -check 0"
+1404246360.393 Adapter->GUI: feature option="Polyglot BookFile -file book.bin"
+1404246360.394 Adapter->GUI: feature option="Polyglot BookRandom -check 1"
+1404246360.395 Adapter->GUI: feature option="Polyglot BookDepth -spin 256 0 256"
+1404246360.396 Adapter->GUI: feature option="Polyglot STFudge -spin 20 0 1000"
+1404246360.397 Adapter->GUI: feature option="Polyglot SyncStop -check 0"
+1404246360.398 Adapter->GUI: feature option="Polyglot Save -save"
+1404246360.399 Adapter->GUI: feature done=1
+1404246536.201 GUI->Adapter: level 99 999 0
+1404246597.960 GUI->Adapter: white
+1404246597.960 POLYGLOT WAIT
+1404246599.120 GUI->Adapter: go
+1404246599.120 POLYGLOT THINK
+1404246599.120 POLYGLOT START SEARCH
+1404246599.120 POLYGLOT Not sending option "UCI_Chess960" since it already has the correct value.
+1404246599.120 Adapter->Engine: setoption name Ponder value false
+1404246599.120 POLYGLOT FEN rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+1404246599.120 Adapter->Engine: position startpos
+1404246599.120 Adapter->Engine: go wtime 300000 btime 300000 movestogo 99
+1404246599.124 Engine->Adapter: info depth 1 seldepth 1 score cp 82 nodes 27 nps 13500 time 2 multipv 1 pv e2e4
+1404246599.124 Engine->Adapter: info depth 2 seldepth 2 score cp 9 nodes 155 nps 51666 time 3 multipv 1 pv d2d4 d7d5
+1404246599.124 Engine->Adapter: info depth 3 seldepth 3 score cp 56 nodes 278 nps 92666 time 3 multipv 1 pv d2d4 d7d5 g1f3
+1404246599.126 Engine->Adapter: info depth 4 seldepth 4 score cp 8 nodes 749 nps 187250 time 4 multipv 1 pv d2d4 g8f6 g1f3 d7d6
+1404246599.127 Engine->Adapter: info depth 5 seldepth 5 score cp 51 nodes 1840 nps 306666 time 6 multipv 1 pv d2d4 g8f6 g1f3 d7d5 b1c3
+1404246599.130 Engine->Adapter: info depth 6 seldepth 6 score cp 9 nodes 3535 nps 392777 time 9 multipv 1 pv d2d4 g8f6 g1f3 d7d5 b1c3 b8c6
+1404246599.132 Engine->Adapter: info depth 7 seldepth 7 score cp 44 nodes 4980 nps 452727 time 11 multipv 1 pv d2d4 g8f6 g1f3 d7d5 b1c3 b8c6 e2e3
+1404246599.138 Engine->Adapter: info depth 8 seldepth 8 score cp 9 nodes 9524 nps 560235 time 17 multipv 1 pv d2d4 g8f6 g1f3 d7d5 b1c3 b8c6 e2e3 e7e6
+1404246599.148 Engine->Adapter: info depth 9 seldepth 10 score cp 46 nodes 15565 nps 576481 time 27 multipv 1 pv d2d4 g8f6 g1f3 d7d5 b1c3 b8c6 e2e3 a7a6 b2b3
+1404246599.198 Engine->Adapter: info depth 10 seldepth 14 score cp 27 nodes 63764 nps 828103 time 77 multipv 1 pv e2e4 e7e5 g1f3 b8c6 b1c3 g8f6 d2d4 e5d4 f3d4 d7d5
+1404246599.219 Engine->Adapter: info depth 11 seldepth 15 score cp 41 nodes 100737 nps 1027928 time 98 multipv 1 pv d2d4 g8f6 g1f3 d7d5 b1c3 b8c6 e2e3 c8f5 f1d3 e7e6 e1g1 f5d3 d1d3
+1404246599.266 Engine->Adapter: info depth 12 seldepth 15 score cp 25 nodes 196682 nps 1365847 time 144 multipv 1 pv e2e4 e7e5 b1c3 g8f6 f2f4 d7d6 g1f3 b8c6 f1b5 c8d7 d2d4 e5d4 f3d4 c6d4 d1d4 d7b5 c3b5
+1404246599.330 Engine->Adapter: info depth 13 seldepth 17 score cp 27 nodes 352641 nps 1687277 time 209 multipv 1 pv d2d4 g8f6 g1f3 d7d5 c1f4 e7e6 e2e3 f8b4 c2c3 b4d6 f4d6 d8d6 f1d3 e8g8 e1g1 b8c6
+1404246599.338 Engine->Adapter: info depth 14 seldepth 17 score cp 27 nodes 393090 nps 1811474 time 217 multipv 1 pv d2d4 g8f6 g1f3 d7d5 c1f4 e7e6 e2e3 f8b4 c2c3 b4d6 f4d6 d8d6 f1d3 e8g8 e1g1 b8c6
+1404246599.392 Engine->Adapter: info depth 15 seldepth 20 score cp 24 nodes 633156 nps 2336369 time 271 multipv 1 pv d2d4 g8f6 g1f3 d7d5 c1f4 e7e6 e2e3 f8e7 f1d3 c7c5 d4c5 e8g8 e1g1 b8c6 b1d2 e7c5 d2b3 c5d6 f4d6 d8d6
+1404246599.545 Engine->Adapter: info depth 16 seldepth 23 score cp 32 nodes 1311445 nps 3093030 time 424 multipv 1 pv e2e4 e7e5 b1c3 g8f6 g1f3 b8c6 f1c4 f8c5 e1g1 e8g8 d2d3 d7d6 a2a3 c8e6 c4e6 f7e6 c1d2
+1404246599.750 Engine->Adapter: info depth 17 seldepth 23 score cp 24 nodes 2407204 nps 3827033 time 629 multipv 1 pv g1f3 g8f6 d2d4 d7d5 c1f4 e7e6 e2e3 f8e7 f1d3 c7c5 d4c5 e8g8 e1g1 b8c6 b1d2 e7c5 d2b3 c5d6 f4d6 d8d6
+1404246599.852 Engine->Adapter: info depth 18 seldepth 23 score cp 24 nodes 2888978 nps 3952090 time 731 multipv 1 pv g1f3 g8f6 d2d4 d7d5 c1f4 e7e6 e2e3 f8e7 f1d3 c7c5 d4c5 e8g8 e1g1 b8c6 b1d2 e7c5 d2b3 c5d6 f4d6 d8d6
+1404246600.226 Engine->Adapter: info depth 19 seldepth 23 score cp 21 nodes 4903226 nps 4437308 time 1105 multipv 1 pv e2e4 e7e5 b1c3 g8f6 g1f3 b8c6 f1c4 f8c5 e1g1 e8g8 d2d3 d7d6 a2a3 a7a6 c1g5 h7h6 g5f6 d8f6 c3d5
+1404246601.061 Engine->Adapter: info depth 20 seldepth 25 score cp 19 nodes 9221560 nps 4753381 time 1940 multipv 1 pv e2e4 e7e5 g1f3 b8c6 f1b5 g8f6 e1g1 f8c5 b5c6 d7c6 d2d3 d8e7 b1c3 e8g8 a2a3 a7a5 c1e3 c5e3 f2e3 c8g4 h2h3 g4f3 d1f3
+1404246602.793 Engine->Adapter: info depth 21 seldepth 29 score cp 31 lowerbound nodes 18655149 nps 5080378 time 3672 multipv 1 pv e2e4 e7e5 g1f3 b8c6 f1b5 g8f6 e1g1 f8c5 c2c3 a7a6 b5c6 d7c6 d2d4 e5d4 e4e5 f6e4 c3d4 c5b4 b1d2
+1404246602.793 Engine->Adapter: info depth 21 currmove e2e4 currmovenumber 1
+1404246603.124 Engine->Adapter: info depth 21 currmove b1c3 currmovenumber 3
+1404246603.171 Engine->Adapter: info depth 21 currmove h2h4 currmovenumber 16
+1404246603.221 Engine->Adapter: info depth 21 seldepth 29 score cp 25 nodes 20955617 nps 5111126 time 4100 multipv 1 pv e2e4 e7e5 g1f3 g8f6 f3e5 d7d6 e5f3 f6e4 d1e2 d8e7 b1c3 e4c3 d2c3 e7e2 f1e2 b8c6 e1g1 c8e6 c1e3 f8e7 a2a3 e8g8 f1d1
+1404246603.222 Engine->Adapter: info depth 22 currmove e2e4 currmovenumber 1
+1404246604.286 Engine->Adapter: info depth 22 currmove g1f3 currmovenumber 3
+1404246604.560 Engine->Adapter: info depth 22 seldepth 29 score cp 23 nodes 27917660 nps 5132866 time 5439 multipv 1 pv e2e4 e7e5 g1f3 b8c6 f1b5 a7a6 b5c6 d7c6 e1g1 f8d6 d2d4 e5d4 d1d4 f7f6 b1d2 c8e6 d2b3 g8e7 b3c5 d6c5 d4c5 e8g8 c1e3
+1404246604.560 Engine->Adapter: info nodes 27917660 time 5439
+1404246604.560 Engine->Adapter: bestmove e2e4 ponder e7e5
+1404246604.560 Adapter->GUI: move e2e4
+1404246604.560 POLYGLOT MOVE e4
+1404246604.560 POLYGLOT THINK -> WAIT

@@ -1,0 +1,5 @@
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\bin\Debug\Chess.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\bin\Debug\Chess.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\obj\Debug\Chess.dll
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\obj\Debug\Chess.pdb
+D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\obj\Debug\Chess.csprojResolveAssemblyReference.cache

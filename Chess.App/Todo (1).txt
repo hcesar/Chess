@@ -1,0 +1,8 @@
+﻿- Persistência em disco
+- Spectator View (para arquivo e rede)
+- Tradutor para SQL
+
+
+- Descoberta de servidores (broadcast na rede)
+- Form de novo jogo
+- Integração com o NetCode

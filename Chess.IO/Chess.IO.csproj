@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BA7A39D-6517-4ED8-B31E-86BEFD94921B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chess.IO</RootNamespace>
+    <AssemblyName>Chess.IO</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions\ChessAction.cs" />
+    <Compile Include="Actions\EndGameAction.cs" />
+    <Compile Include="Actions\SensorAction.cs" />
+    <Compile Include="ChessStreamReader.cs" />
+    <Compile Include="ChessStreamWriter.cs" />
+    <Compile Include="ChessStream.cs" />
+    <Compile Include="Networking\Client.cs" />
+    <Compile Include="Actions\MoveAction.cs" />
+    <Compile Include="IChessStream.cs" />
+    <Compile Include="Networking\IChessClientCallback.cs" />
+    <Compile Include="Networking\ChessConnection.cs" />
+    <Compile Include="Networking\IChessServerService.cs" />
+    <Compile Include="NetworkPlayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Networking\Server.cs" />
+    <Compile Include="Actions\StartAction.cs" />
+    <Compile Include="ServerDiscovery.cs" />
+    <Compile Include="SpectatorClient.cs" />
+    <Compile Include="SpectatorServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chess.Sensors\Chess.Sensors.csproj">
+      <Project>{d282d578-66e3-449b-8ca6-7eb66847ec29}</Project>
+      <Name>Chess.Sensors</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chess.WinBoard\Chess.WinBoard.csproj">
+      <Project>{d0f363a1-7266-4e90-b4ed-a15ff78b2150}</Project>
+      <Name>Chess.WinBoard</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chess\Chess.csproj">
+      <Project>{cb0ffbf8-54d2-4eb1-b28a-fedfb7b8c960}</Project>
+      <Name>Chess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

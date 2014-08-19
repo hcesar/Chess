@@ -1,0 +1,1 @@
+@polyglot stockfish.ini
