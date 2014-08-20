@@ -44,18 +44,22 @@ namespace Chess.IO
 
         private void Persist(ChessAction action)
         {
-            if (action.TimeDelay >= 0)
-                writer.Write(action.TimeDelay);
-            else
-                writer.Write((int)(sw.ElapsedMilliseconds - lastAction));
+            lock (this)
+            {
+                int delay = (int)(sw.ElapsedMilliseconds - lastAction);
+                if (action.TimeDelay >= 0)
+                    writer.Write(action.TimeDelay);
+                else
+                    writer.Write(delay);
 
-            this.lastAction = sw.ElapsedMilliseconds;
-            writer.Write(action.OpCode);
-            action.Write(this, writer);
-            writer.Flush();
+                this.lastAction = sw.ElapsedMilliseconds;
+                writer.Write(action.OpCode);
+                action.Write(this, writer);
+                writer.Flush();
 
-            if (action is EndGameAction)
-                ((IDisposable)this).Dispose();
+                if (action is EndGameAction)
+                    ((IDisposable)this).Dispose();
+            }
         }
 
         internal int GetSensorIndex(Type sensorType)

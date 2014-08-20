@@ -17,6 +17,7 @@ namespace Chess.App
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
+            var type = typeof(Sensors.TobiiEyeTracker.EyeTrackerSensor);
             //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
 
@@ -111,7 +112,7 @@ namespace Chess.App
             board.Start();
             new System.Threading.Thread(() =>
             {
-                ChessAction action;
+                ChessAction action = null;
                 do
                 {
                     try
@@ -121,8 +122,9 @@ namespace Chess.App
                     }
                     catch
                     {
-                        MessageBox.Show("The server stop responding.");
-                        return;
+                        //MessageBox.Show("The server stop responding.");
+                        //return;
+                        continue;
                     }
                 }
                 while (!(action is EndGameAction));
@@ -143,11 +145,13 @@ namespace Chess.App
             if (action is SensorAction)
             {
                 var sensorAction = action as SensorAction;
-                //var mouseData = sensorAction.Data as Chess.Sensors.MouseSensorData;
-                //this.boardCanvas.SetEyePosition(mouseData.Location);
+                var mouseData = sensorAction.Data as Chess.Sensors.MouseSensorData;
+                if (mouseData != null)
+                    this.boardCanvas.SetMousePosition(mouseData.Location);
 
                 var eyeTracker = sensorAction.Data as Chess.Sensors.TobiiEyeTracker.EyeTrackerSensorData;
-                this.boardCanvas.SetEyePosition(eyeTracker.LeftPosition);
+                if (eyeTracker != null)
+                    this.boardCanvas.SetEyePosition(eyeTracker.LeftPosition);
 
             }
         }

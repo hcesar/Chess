@@ -23,8 +23,11 @@ namespace Chess.Sensors
 
         protected void OnDataAvailable(SensorData data)
         {
-            if (this.DataAvailable != null)
-                this.DataAvailable(data);
+            lock (this)
+            {
+                if (this.DataAvailable != null)
+                    this.DataAvailable(data);
+            }
         }
 
         internal void SetBoard(Board board)

@@ -12,6 +12,7 @@ namespace Chess.App
         public Board Board { get; private set; }
 
         private PictureBox eyeTracking;
+        private PictureBox mouseTracking;
         private MessageDialog dlgMessage;
 
         public BoardControl()
@@ -45,10 +46,22 @@ namespace Chess.App
             eyeTracking.BringToFront();
             eyeTracking.Visible = false;
 
+            mouseTracking = new PictureBox();
+            this.Controls.Add(mouseTracking);
+            mouseTracking.Size = new System.Drawing.Size(100, 100);
+            mouseTracking.BackColor = Color.Transparent;
+            mouseTracking.BringToFront();
+            mouseTracking.Visible = false;
+
             var imgEyeTracking = new Bitmap(eyeTracking.Width, eyeTracking.Height);
             using (var g = Graphics.FromImage(imgEyeTracking))
                 g.DrawEllipse(new Pen(Brushes.Red, 3), 5, 5, 90, 90);
             eyeTracking.Image = imgEyeTracking;
+
+            var imgMouseTracking = new Bitmap(mouseTracking.Width, mouseTracking.Height);
+            using (var g = Graphics.FromImage(imgMouseTracking))
+                g.DrawEllipse(new Pen(Brushes.Blue, 3), 5, 5, 90, 90);
+            mouseTracking.Image = imgMouseTracking;
 
             var img = new Bitmap(this.Width, this.Height);
             using (var g = Graphics.FromImage(img))
@@ -159,6 +172,16 @@ namespace Chess.App
             if (!eyeTracking.Visible)
                 eyeTracking.Visible = true;
             eyeTracking.Location = newPosition;
+        }
+
+        internal void SetMousePosition(Point newPosition)
+        {
+            newPosition.Offset(-mouseTracking.Width / 2, -mouseTracking.Height / 2);
+            this.Invalidate(new Rectangle(mouseTracking.Location, new Size(100, 100)));
+
+            if (!mouseTracking.Visible)
+                mouseTracking.Visible = true;
+            mouseTracking.Location = newPosition;
         }
     }
 }

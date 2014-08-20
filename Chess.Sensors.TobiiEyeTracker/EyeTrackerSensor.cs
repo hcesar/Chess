@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace Chess.Sensors.TobiiEyeTracker
 {
     public class EyeTrackerSensor : Sensor
     {
+        Stopwatch sw = Stopwatch.StartNew();
         public static bool IsOnline { get; private set; }
         private static EyeTracker tracker;
         private Control boardControl;
@@ -43,13 +45,17 @@ namespace Chess.Sensors.TobiiEyeTracker
         private void EyeTrackerGazeData(object sender, GazeDataEventArgs e)
         {
             var gazeData = e.GazeData;
-            var p1 = new Point((int)gazeData.Left.GazePointOnDisplayNormalized.X, (int)gazeData.Left.GazePointOnDisplayNormalized.Y);
-            var p2 = new Point((int)gazeData.Right.GazePointOnDisplayNormalized.X, (int)gazeData.Right.GazePointOnDisplayNormalized.Y);
 
+            var point = e.GazeData.Left.GazePointOnDisplayNormalized;
+            var p1 = new Point((int)(point.X * Screen.PrimaryScreen.WorkingArea.Width), (int)(point.Y * Screen.PrimaryScreen.WorkingArea.Height));
+
+            //var p1 = new Point((int)gazeData.Left.GazePointOnDisplayNormalized.X, (int)gazeData.Left.GazePointOnDisplayNormalized.Y);
             p1 = (Point)this.boardControl.Invoke((Delegate)(Func<object>)(() => this.boardControl.PointToClient(p1)));
-            p2 = (Point)this.boardControl.Invoke((Delegate)(Func<object>)(() => this.boardControl.PointToClient(p2)));
 
-            this.OnDataAvailable(new EyeTrackerSensorData(p1, p2));
+            //var p2 = new Point((int)gazeData.Right.GazePointOnDisplayNormalized.X, (int)gazeData.Right.GazePointOnDisplayNormalized.Y);
+            //p2 = (Point)this.boardControl.Invoke((Delegate)(Func<object>)(() => this.boardControl.PointToClient(p2)));
+
+            this.OnDataAvailable(new EyeTrackerSensorData(p1, p1));
         }
 
         private void EyeTrackerError(object sender, EyeTrackerErrorEventArgs e)

@@ -24,3 +24,4 @@ D:\Projetos\Chess\Chess.ZTest\bin\x64\Debug\Tobii.Gaze.Core.Net.xml
 D:\Projetos\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.csprojResolveAssemblyReference.cache
 D:\Projetos\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.exe
 D:\Projetos\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.pdb
+D:\Projetos\Chess\Chess.ZTest\bin\x64\Debug\TobiiGazeCore64.dll
