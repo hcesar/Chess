@@ -68,11 +68,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdHocTests\AdHocTest.cs" />
+    <Compile Include="Controls\BaseForm.cs" />
     <Compile Include="Controls\BoardControl.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\MessageDialog.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NewParticipantForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\NewParticipantForm.Designer.cs">
+      <DependentUpon>NewParticipantForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ParticipantsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\ParticipantsForm.Designer.cs">
+      <DependentUpon>ParticipantsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="ChessForm.cs">
@@ -96,6 +109,12 @@
     <EmbeddedResource Include="ChessForm.resx">
       <DependentUpon>ChessForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Controls\NewParticipantForm.resx">
+      <DependentUpon>NewParticipantForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ParticipantsForm.resx">
+      <DependentUpon>ParticipantsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\NewGameForm.resx">
       <DependentUpon>NewGameForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +134,10 @@
     <None Include="AdHocTests\Einstellung1.test">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="default.tests">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="game.chess">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

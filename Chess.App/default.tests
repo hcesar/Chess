@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<tests>
+
+  <test>
+    <type>AdHoc</type>
+    <name>Einsellung Effect 1</name>
+    <instruction>Decida a melhor jogada para as peças brancas.</instruction>
+    <startingFen>1qrr2k1/6pp/p1b5/1p1p2N1/1P6/P4P2/KB2Q1PP/6R1 w - - 0 1</startingFen>
+    <playerMoves>0</playerMoves>
+    <aiLevel>Medium</aiLevel>
+    <waitBeforeMove>00:00:00</waitBeforeMove>
+    <playerColor>White</playerColor>
+  </test>
+  <test>
+    <type>AdHoc</type>
+    <name>Einsellung Effect 2</name>
+    <instruction>Decida a melhor jogada para as peças brancas.</instruction>
+    <startingFen>1qrr2k1/6pp/p1b5/1p1p2N1/1P6/P4P2/KB2Q1PP/6R1 w - - 0 1</startingFen>
+    <playerMoves>0</playerMoves>
+    <aiLevel>Medium</aiLevel>
+    <waitBeforeMove>00:00:00</waitBeforeMove>
+    <playerColor>White</playerColor>
+  </test>
+
+</tests>

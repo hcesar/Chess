@@ -1,7 +1,9 @@
 ﻿using Chess.IO;
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace Chess.App
@@ -27,13 +29,16 @@ namespace Chess.App
             this.boardCanvas.Size = new Size(800, 800);
             this.boardCanvas.Location = new Point((myScreen.WorkingArea.Width - boardCanvas.Width) / 2, (myScreen.WorkingArea.Height - boardCanvas.Height) / 2 + 10);
 
+            /*
             var tests = System.IO.Directory.EnumerateFiles("AdHocTests", "*.test").Select(i => new AdHocTest(System.IO.File.OpenRead(i))).ToList();
             foreach (var test in tests.OrderBy(i => i.Name.ToLower()))
             {
                 var menuItem = this.testsToolStripMenuItem.DropDownItems.Add(test.Name);
                 menuItem.Tag = test;
                 menuItem.Click += menuItem_Click;
-            }
+            }*/
+
+            var result = this.OpenDialog<ParticipantsForm>();
         }
 
         private void menuItem_Click(object sender, EventArgs e)
@@ -154,16 +159,6 @@ namespace Chess.App
                     this.boardCanvas.SetEyePosition(eyeTracker.LeftPosition);
 
             }
-        }
-
-        private void Invoke(Action action)
-        {
-            this.Invoke((Delegate)action);
-        }
-
-        private TReturn Invoke<TReturn>(Func<TReturn> func, params object[] args)
-        {
-            return (TReturn)this.Invoke((Delegate)func, args);
         }
     }
 }

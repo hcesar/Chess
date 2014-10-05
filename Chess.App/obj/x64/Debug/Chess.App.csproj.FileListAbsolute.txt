@@ -56,3 +56,6 @@ D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.ChessForm.resources
 D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.NewGameForm.resources
 D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.Properties.Resources.resources
 D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.csproj.GenerateResource.Cache
+D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\default.tests
+D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.ParticipantsForm.resources
+D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.NewParticipantForm.resources
