@@ -25,12 +25,14 @@ D:\Projetos\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.csprojResolveAssemblyRef
 D:\Projetos\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.exe
 D:\Projetos\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.pdb
 D:\Projetos\Chess\Chess.ZTest\bin\x64\Debug\TobiiGazeCore64.dll
-D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Engines\polyglot.exe
-D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Engines\StockFish.exe
-D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Engines\StockFish.ini
+D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\tests.participants.xml
+D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\tests.xml
 D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\AdHocTests\Einstellung2.test
 D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\AdHocTests\Einstellung1.test
 D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\game.chess
+D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Engines\polyglot.exe
+D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Engines\StockFish.exe
+D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Engines\StockFish.ini
 D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Chess.ZTest.exe.config
 D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Chess.ZTest.exe
 D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Chess.ZTest.pdb
@@ -51,5 +53,4 @@ D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\Tobii.Gaze.Core.Net.xml
 D:\Projetos\GitHub\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.csprojResolveAssemblyReference.cache
 D:\Projetos\GitHub\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.exe
 D:\Projetos\GitHub\Chess\Chess.ZTest\obj\x64\Debug\Chess.ZTest.pdb
-D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\default.tests
 D:\Projetos\GitHub\Chess\Chess.ZTest\bin\x64\Debug\TobiiGazeCore64.dll

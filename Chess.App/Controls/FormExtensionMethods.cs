@@ -19,11 +19,12 @@ namespace Chess.App
             return (TReturn)form.Invoke((Delegate)func, args);
         }
 
-        public static  DialogResult OpenDialog<TForm>(this Form form) where TForm : Form, new()
+        public static TResult OpenDialog<TForm, TResult>(this Form form) where TForm : Form, IDialogForm<TResult>, new()
         {
             using (var frm = new TForm())
             {
-                return frm.ShowDialog(form);
+                var result = frm.ShowDialog(form);
+                return ((IDialogForm<TResult>)frm).DialogResult;
             }
         }
     }

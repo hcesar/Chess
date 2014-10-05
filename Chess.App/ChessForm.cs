@@ -1,4 +1,5 @@
-﻿using Chess.IO;
+﻿using Chess.App.Tests;
+using Chess.IO;
 using System;
 using System.Drawing;
 using System.Globalization;
@@ -38,7 +39,8 @@ namespace Chess.App
                 menuItem.Click += menuItem_Click;
             }*/
 
-            var result = this.OpenDialog<ParticipantsForm>();
+            var participant = this.OpenDialog<ParticipantsForm, Participant>();
+            MessageBox.Show(participant.Name);
         }
 
         private void menuItem_Click(object sender, EventArgs e)

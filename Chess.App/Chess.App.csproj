@@ -68,10 +68,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdHocTests\AdHocTest.cs" />
-    <Compile Include="Controls\BaseForm.cs" />
+    <Compile Include="Controls\FormExtensionMethods.cs" />
     <Compile Include="Controls\BoardControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Controls\IDialog.cs" />
     <Compile Include="Controls\MessageDialog.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -106,6 +107,8 @@
     <Compile Include="Players\HumanPlayer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\Gender.cs" />
+    <Compile Include="Tests\Participant.cs" />
     <EmbeddedResource Include="ChessForm.resx">
       <DependentUpon>ChessForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,10 +138,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
-    <None Include="default.tests">
+    <Content Include="tests.participants.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Content Include="tests.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="game.chess">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

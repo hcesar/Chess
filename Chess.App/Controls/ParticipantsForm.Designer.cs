@@ -40,6 +40,7 @@
             this.lstParticipants.Name = "lstParticipants";
             this.lstParticipants.Size = new System.Drawing.Size(573, 251);
             this.lstParticipants.TabIndex = 0;
+            this.lstParticipants.DoubleClick += new System.EventHandler(this.lstParticipants_DoubleClick);
             // 
             // btnSelectParticipant
             // 
@@ -49,6 +50,7 @@
             this.btnSelectParticipant.TabIndex = 1;
             this.btnSelectParticipant.Text = "Start Test";
             this.btnSelectParticipant.UseVisualStyleBackColor = true;
+            this.btnSelectParticipant.Click += new System.EventHandler(this.btnSelectParticipant_Click);
             // 
             // btnNewParticipant
             // 
@@ -64,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 416);
+            this.ClientSize = new System.Drawing.Size(644, 391);
             this.Controls.Add(this.btnNewParticipant);
             this.Controls.Add(this.btnSelectParticipant);
             this.Controls.Add(this.lstParticipants);
