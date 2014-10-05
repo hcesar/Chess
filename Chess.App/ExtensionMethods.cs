@@ -18,7 +18,12 @@ namespace System
         public static TEntity ToEntity<TEntity>(this Xml.XmlNode node) where TEntity : new()
         {
             var entity = new TEntity();
+            node.ToEntity(entity);
+            return entity;
+        }
 
+        public static void ToEntity<TEntity>(this Xml.XmlNode node, TEntity entity)
+        {
             var nodes = node.ChildNodes.Cast<Xml.XmlNode>().ToList();
             foreach (var prop in entity.GetType().GetProperties())
             {
@@ -41,9 +46,8 @@ namespace System
                     throw new InvalidOperationException(string.Format("Não foi possível converter '{0}' em '{1}'.", value, prop.Name));
                 }
             }
-
-            return entity;
         }
+
 
         public static IList<TEntity> ToEntityList<TEntity>(this FileInfo xmlFile, string entitiesSelector) where TEntity : new()
         {

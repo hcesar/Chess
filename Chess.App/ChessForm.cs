@@ -1,6 +1,7 @@
 ﻿using Chess.App.Tests;
 using Chess.IO;
 using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace Chess.App
     public partial class ChessForm : Form
     {
         private SpectatorServer spectatorServer;
+        private IList<Test> tests;
+        private int currentTestIndex = 0;
+        private Participant currentParticipant;
+
 
         public ChessForm()
         {
@@ -27,8 +32,8 @@ namespace Chess.App
             this.menuStrip1.Visible = false;
             this.WindowState = FormWindowState.Maximized;
             Screen myScreen = Screen.FromControl(this);
-            this.boardCanvas.Size = new Size(800, 800);
-            this.boardCanvas.Location = new Point((myScreen.WorkingArea.Width - boardCanvas.Width) / 2, (myScreen.WorkingArea.Height - boardCanvas.Height) / 2 + 10);
+            this.boardControl.Size = new Size(800, 800);
+            this.boardControl.Location = new Point((myScreen.WorkingArea.Width - boardControl.Width) / 2, (myScreen.WorkingArea.Height - boardControl.Height) / 2 + 10);
 
             /*
             var tests = System.IO.Directory.EnumerateFiles("AdHocTests", "*.test").Select(i => new AdHocTest(System.IO.File.OpenRead(i))).ToList();
@@ -39,15 +44,26 @@ namespace Chess.App
                 menuItem.Click += menuItem_Click;
             }*/
 
+            tests = Test.LoadAll();
             var participant = this.OpenDialog<ParticipantsForm, Participant>();
-            MessageBox.Show(participant.Name);
+            currentParticipant = participant;
+
+            ShowTest();
         }
 
+        private void ShowTest()
+        {
+            var test = this.tests[this.currentTestIndex];
+            var orchestrator = test.GetOrchestrator(this.boardControl);
+            orchestrator.Start();
+        }
+             
+        #region Legacy
         private void menuItem_Click(object sender, EventArgs e)
         {
             var test = ((ToolStripItem)sender).Tag as AdHocTest;
-            this.boardCanvas.Visible = true;
-            this.boardCanvas.ShowMessage(test.Instruction, closeAction: () => CreateNewGame(test));
+            this.boardControl.Visible = true;
+            this.boardControl.ShowMessage(test.Instruction, closeAction: () => CreateNewGame(test));
         }
 
         private void CreateNewGame(AdHocTest test)
@@ -56,9 +72,9 @@ namespace Chess.App
             if (moves == 0)
                 moves = int.MaxValue;
 
-            var board = this.boardCanvas.StartNew(test.GetPlayer(PlayerColor.White), test.GetPlayer(PlayerColor.Black), test.StartingFEN);
-            this.boardCanvas.Board.Start();
-            this.boardCanvas.Board.PieceMoved += move => { if (board.CurrentPlayer.PlayerColor == PlayerColor.White) return; moves--; if (moves == 0) board.Stop(); };
+            var board = this.boardControl.StartNew(test.GetPlayer(PlayerColor.White), test.GetPlayer(PlayerColor.Black), test.FEN);
+            this.boardControl.Board.Start();
+            this.boardControl.Board.PieceMoved += move => { if (board.CurrentPlayer.PlayerColor == PlayerColor.White) return; moves--; if (moves == 0) board.Stop(); };
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
@@ -80,11 +96,11 @@ namespace Chess.App
             if (spectatorServer != null)
                 ((IDisposable)spectatorServer).Dispose();
 
-            var board = this.boardCanvas.StartNew(config.White, config.Black);
+            var board = this.boardControl.StartNew(config.White, config.Black);
             spectatorServer = new SpectatorServer(board);
 
-            var mouseSensor = new Sensors.MouseSensor(this.boardCanvas);
-            var eyeTrackerSensor = new Sensors.TobiiEyeTracker.EyeTrackerSensor(this.boardCanvas);
+            var mouseSensor = new Sensors.MouseSensor(this.boardControl);
+            var eyeTrackerSensor = new Sensors.TobiiEyeTracker.EyeTrackerSensor(this.boardControl);
             var sensorContainer = new Sensors.SensorContainer(board, mouseSensor, eyeTrackerSensor);
 
             var writer = new IO.ChessStreamWriter(board, sensorContainer, DateTime.Now.ToString("yyyMMddmmss") + ".chess");
@@ -92,7 +108,7 @@ namespace Chess.App
             if (config.White.IsReady && config.Black.IsReady)
                 board.Start();
             else
-                this.boardCanvas.ShowMessage("Waiting for remote player", board.Start, () => config.White.IsReady && config.Black.IsReady);
+                this.boardControl.ShowMessage("Waiting for remote player", board.Start, () => config.White.IsReady && config.Black.IsReady);
         }
 
         private void fromNetworkToolStripMenuItem_Click(object sender, EventArgs e)
@@ -115,7 +131,7 @@ namespace Chess.App
 
         private void CreateNewGame(SpectatorClient spectator)
         {
-            var board = this.boardCanvas.StartNew(new Player(), new Player(), spectator.StartingFEN);
+            var board = this.boardControl.StartNew(new Player(), new Player(), spectator.StartingFEN);
             board.Start();
             new System.Threading.Thread(() =>
             {
@@ -154,13 +170,14 @@ namespace Chess.App
                 var sensorAction = action as SensorAction;
                 var mouseData = sensorAction.Data as Chess.Sensors.MouseSensorData;
                 if (mouseData != null)
-                    this.boardCanvas.SetMousePosition(mouseData.Location);
+                    this.boardControl.SetMousePosition(mouseData.Location);
 
                 var eyeTracker = sensorAction.Data as Chess.Sensors.TobiiEyeTracker.EyeTrackerSensorData;
                 if (eyeTracker != null)
-                    this.boardCanvas.SetEyePosition(eyeTracker.LeftPosition);
+                    this.boardControl.SetEyePosition(eyeTracker.LeftPosition);
 
             }
         }
+        #endregion Legacy
     }
 }

@@ -37,9 +37,9 @@
             this.fromNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.boardCanvas = new Chess.App.BoardControl();
+            this.boardControl = new Chess.App.BoardControl();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.boardCanvas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boardControl)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -108,15 +108,15 @@
             // 
             // boardCanvas
             // 
-            this.boardCanvas.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.boardCanvas.Image = ((System.Drawing.Image)(resources.GetObject("boardCanvas.Image")));
-            this.boardCanvas.Location = new System.Drawing.Point(331, 24);
-            this.boardCanvas.Margin = new System.Windows.Forms.Padding(0);
-            this.boardCanvas.Name = "boardCanvas";
-            this.boardCanvas.Size = new System.Drawing.Size(800, 800);
-            this.boardCanvas.TabIndex = 1;
-            this.boardCanvas.TabStop = false;
-            this.boardCanvas.Visible = false;
+            this.boardControl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.boardControl.Image = ((System.Drawing.Image)(resources.GetObject("boardCanvas.Image")));
+            this.boardControl.Location = new System.Drawing.Point(331, 24);
+            this.boardControl.Margin = new System.Windows.Forms.Padding(0);
+            this.boardControl.Name = "boardCanvas";
+            this.boardControl.Size = new System.Drawing.Size(800, 800);
+            this.boardControl.TabIndex = 1;
+            this.boardControl.TabStop = false;
+            this.boardControl.Visible = false;
             // 
             // ChessForm
             // 
@@ -124,7 +124,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1486, 848);
-            this.Controls.Add(this.boardCanvas);
+            this.Controls.Add(this.boardControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ChessForm";
@@ -133,7 +133,7 @@
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.boardCanvas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.boardControl)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,7 +144,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-        private BoardControl boardCanvas;
+        private BoardControl boardControl;
         private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromFileToolStripMenuItem;

@@ -11,10 +11,19 @@ namespace Chess.App.Tests
 {
     public class Participant
     {
+        public Participant()
+        {
+            this.Tests = new List<TestCompleted>();
+        }
+
         public string Name { get; set; }
         public string Profession { get; set; }
         public int Age { get; set; }
         public Gender Gender { get; set; }
+
+        [XmlElement(typeof(List<TestCompleted>), ElementName = "Tests")]
+        public IList<TestCompleted> Tests { get; set; }
+
 
         public static IList<Participant> Load()
         {
@@ -26,16 +35,17 @@ namespace Chess.App.Tests
             var participants = Load();
             participants.Add(participant);
             using (var fs = new FileStream("tests.participants.xml", FileMode.Create, FileAccess.Write))
-                new XmlSerializer(typeof(Participants)).Serialize(fs, new Participants(participants));
+                new XmlSerializer(typeof(ParticipantCollection)).Serialize(fs, new ParticipantCollection(participants));
         }
 
+        #region ParticipantCollection
         [XmlRoot("Participants")]
-        public class Participants
+        public class ParticipantCollection
         {
-            public Participants()
+            public ParticipantCollection()
             {
             }
-            public Participants(IList<Participant> items)
+            public ParticipantCollection(IList<Participant> items)
             {
                 this.Items = (List<Participant>)items;
             }
@@ -43,5 +53,6 @@ namespace Chess.App.Tests
             [XmlElement("Participant")]
             public List<Participant> Items { get; set; }
         }
+        #endregion ParticipantCollection
     }
 }
