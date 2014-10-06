@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -47,6 +48,8 @@ namespace Chess.App
             tests = Test.LoadAll();
             var participant = this.OpenDialog<ParticipantsForm, Participant>();
             currentParticipant = participant;
+            if (!Directory.Exists("recorded-files"))
+                Directory.CreateDirectory("recorded-files");
 
             ShowTest();
         }
@@ -60,6 +63,8 @@ namespace Chess.App
                     return;
 
                 Participant.Update(currentParticipant);
+                this.boardControl.Clear();
+                return;
             }
 
             var test = this.tests[index];

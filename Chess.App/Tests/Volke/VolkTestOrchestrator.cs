@@ -60,7 +60,7 @@ namespace Chess.App.Tests.Volke
             this.BoardControl.Clear();
             this.currentTest.Dispose();
             string isCorrect = !(this.testItems.Current.IsCorrect ^ key == 's') ? "True" : "False";
-            result.Result.Add(new TestResult { Name = this.testItems.Current.Id, RecordFile = this.currentTest.RecordFile, Result = isCorrect });
+            result.VolkeTests.Add(new TestResult { Name = this.testItems.Current.Id, RecordFile = this.currentTest.RecordFile, Result = isCorrect, Elapsed = currentTest.Stopwatch.ElapsedMilliseconds });
 
             NextTest();
         }
@@ -71,25 +71,28 @@ namespace Chess.App.Tests.Volke
             private Sensors.SensorContainer sensorContainer;
             public VolkeTestItem Test { get; set; }
             public string RecordFile { get; private set; }
+            public System.Diagnostics.Stopwatch Stopwatch { get; set; }
+
 
             public CurrentTest(VolkeTestItem test, BoardControl boardControl)
             {
+                this.Stopwatch = System.Diagnostics.Stopwatch.StartNew();
                 this.Test = test;
                 var board = boardControl.StartNew(new Player(), new Player(), test.FEN);
 
                 var mouseSensor = new Sensors.MouseSensor(boardControl);
-                this.RecordFile = Guid.NewGuid() + ".chess";
+                this.RecordFile = "recorded-files\\" + Guid.NewGuid() + ".chess";
                 this.sensorContainer = new Sensors.SensorContainer(board, mouseSensor);
                 this.writer = new IO.ChessStreamWriter(board, sensorContainer, this.RecordFile);
 
             }
-
 
             public void Dispose()
             {
                 this.sensorContainer.Stop();
                 this.writer.Dispose();
             }
+
         }
     }
 }

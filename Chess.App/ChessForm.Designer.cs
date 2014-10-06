@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChessForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -118,10 +119,12 @@
             this.lbSideInstructions.Name = "lbSideInstructions";
             this.lbSideInstructions.Size = new System.Drawing.Size(200, 400);
             this.lbSideInstructions.TabIndex = 2;
+            this.lbSideInstructions.Visible = false;
             // 
             // boardControl
             // 
             this.boardControl.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.boardControl.Image = ((System.Drawing.Image)(resources.GetObject("boardControl.Image")));
             this.boardControl.Location = new System.Drawing.Point(331, 24);
             this.boardControl.Margin = new System.Windows.Forms.Padding(0);
             this.boardControl.Name = "boardControl";

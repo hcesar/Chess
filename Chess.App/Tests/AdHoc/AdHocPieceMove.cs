@@ -8,6 +8,9 @@ namespace Chess.App.Tests.AdHoc
 {
     public class AdHocPieceMove
     {
+        public AdHocPieceMove()
+        {
+        }
         public AdHocPieceMove(Square from, Square to)
         {
             this.From = from;

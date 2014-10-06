@@ -51,8 +51,11 @@ namespace Chess.App.Tests
 
         private static void Update(IList<Participant> participants)
         {
-            using (var fs = new FileStream("tests.participants.xml", FileMode.Create, FileAccess.Write))
+            using (var fs = new FileStream("tests.participants.xml.new", FileMode.Create, FileAccess.Write))
                 new XmlSerializer(typeof(ParticipantCollection)).Serialize(fs, new ParticipantCollection(participants));
+
+            File.Delete("tests.participants.xml");
+            File.Move("tests.participants.xml.new", "tests.participants.xml");
         }
 
         #region ParticipantCollection

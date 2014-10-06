@@ -20,3 +20,13 @@ D:\Projetos\Chess\Chess.WinBoard\bin\Debug\Chess.pdb
 D:\Projetos\Chess\Chess.WinBoard\obj\Debug\Chess.WinBoard.csprojResolveAssemblyReference.cache
 D:\Projetos\Chess\Chess.WinBoard\obj\Debug\Chess.WinBoard.dll
 D:\Projetos\Chess\Chess.WinBoard\obj\Debug\Chess.WinBoard.pdb
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Engines\polyglot.exe
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Engines\StockFish.exe
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Engines\StockFish.ini
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Chess.WinBoard.dll.config
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Chess.WinBoard.dll
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Chess.WinBoard.pdb
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Chess.dll
+D:\Projetos\GitHub\Chess\Chess.WinBoard\bin\Debug\Chess.pdb
+D:\Projetos\GitHub\Chess\Chess.WinBoard\obj\Debug\Chess.WinBoard.dll
+D:\Projetos\GitHub\Chess\Chess.WinBoard\obj\Debug\Chess.WinBoard.pdb

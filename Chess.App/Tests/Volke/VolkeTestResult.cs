@@ -10,9 +10,9 @@ namespace Chess.App.Tests.Volke
     {
         public VolkeTestResult()
         {
-            this.Result = new List<TestResult>();
+            this.VolkeTests = new List<TestResult>();
         }
 
-        public new IList<TestResult> Result { get; private set; }
+        public List<TestResult> VolkeTests { get; private set; }
     }
 }
