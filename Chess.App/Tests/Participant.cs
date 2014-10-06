@@ -28,7 +28,13 @@ namespace Chess.App.Tests
 
         public static IList<Participant> Load()
         {
-            return new FileInfo("tests.participants.xml").ToEntityList<Participant>("/Participants/*");
+            using (var fs = File.OpenRead("tests.participants.xml"))
+            {
+                var list = (ParticipantCollection)new XmlSerializer(typeof(ParticipantCollection)).Deserialize(fs);
+                return list.Items;
+            }
+
+            //return new FileInfo("tests.participants.xml").ToEntityList<Participant>("/Participants/*");
         }
 
         public static void Insert(Participant participant)

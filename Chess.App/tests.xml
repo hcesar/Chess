@@ -4,7 +4,8 @@
   <Test>
     <Type>Volke</Type>
     <Name>Proficiency Test</Name>
-    <Instruction>Responda...</Instruction>
+    <Instruction>Use as teclas [S] e [N] para responder as perguntas.</Instruction>
+    <TestsFile>tests.volke.xml</TestsFile>
   </Test>
 
   <Test>
