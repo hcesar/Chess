@@ -9,15 +9,3 @@ D:\Projetos\Chess\Chess.Sensors.TobiiEyeTracker\obj\Debug\Chess.Sensors.TobiiEye
 D:\Projetos\Chess\Chess.Sensors.TobiiEyeTracker\obj\Debug\Chess.Sensors.TobiiEyeTracker.dll
 D:\Projetos\Chess\Chess.Sensors.TobiiEyeTracker\obj\Debug\Chess.Sensors.TobiiEyeTracker.pdb
 D:\Projetos\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Tobii.Gaze.Core.Net.xml
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\TobiiGazeCore64.dll
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Chess.Sensors.TobiiEyeTracker.dll
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Chess.Sensors.TobiiEyeTracker.pdb
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Chess.dll
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Chess.Sensors.dll
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Tobii.Gaze.Core.Net.dll
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Chess.Sensors.pdb
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Chess.pdb
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\bin\Debug\Tobii.Gaze.Core.Net.xml
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\obj\Debug\Chess.Sensors.TobiiEyeTracker.csprojResolveAssemblyReference.cache
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\obj\Debug\Chess.Sensors.TobiiEyeTracker.dll
-D:\Projetos\GitHub\Chess\Chess.Sensors.TobiiEyeTracker\obj\Debug\Chess.Sensors.TobiiEyeTracker.pdb

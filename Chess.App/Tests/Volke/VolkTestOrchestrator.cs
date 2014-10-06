@@ -82,7 +82,7 @@ namespace Chess.App.Tests.Volke
 
                 var mouseSensor = new Sensors.MouseSensor(boardControl);
                 this.RecordFile = "recorded-files\\" + Guid.NewGuid() + ".chess";
-                this.sensorContainer = new Sensors.SensorContainer(board, mouseSensor);
+                this.sensorContainer = new Sensors.SensorContainer(board, mouseSensor, new Sensors.TobiiEyeTracker.EyeTrackerSensor(boardControl));
                 this.writer = new IO.ChessStreamWriter(board, sensorContainer, this.RecordFile);
 
             }

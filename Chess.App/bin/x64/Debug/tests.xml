@@ -4,7 +4,8 @@
   <Test>
     <Type>Volke</Type>
     <Name>Proficiency Test</Name>
-    <Instruction>Responda...</Instruction>
+    <Instruction>Use as teclas [S] e [N] para responder as perguntas.</Instruction>
+    <TestsFile>tests.volke.xml</TestsFile>
   </Test>
 
   <Test>
@@ -12,7 +13,7 @@
     <Name>Einsellung Effect 2</Name>
     <Instruction>Decida a melhor jogada para as peças brancas.</Instruction>
     <FEN>1qrr2k1/6pp/p1b5/1p1p2N1/1P6/P4P2/KB2Q1PP/6R1 w - - 0 1</FEN>
-    <PlayerMoves>0</PlayerMoves>
+    <PlayerMoves>1</PlayerMoves>
     <AILevel>Medium</AILevel>
     <PlayerColor>White</PlayerColor>
   </Test>

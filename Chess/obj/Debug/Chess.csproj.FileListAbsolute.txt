@@ -7,7 +7,3 @@ D:\Projetos\Chess\Chess\bin\Debug\Chess.dll
 D:\Projetos\Chess\Chess\bin\Debug\Chess.pdb
 D:\Projetos\Chess\Chess\obj\Debug\Chess.dll
 D:\Projetos\Chess\Chess\obj\Debug\Chess.pdb
-D:\Projetos\GitHub\Chess\Chess\bin\Debug\Chess.dll
-D:\Projetos\GitHub\Chess\Chess\bin\Debug\Chess.pdb
-D:\Projetos\GitHub\Chess\Chess\obj\Debug\Chess.dll
-D:\Projetos\GitHub\Chess\Chess\obj\Debug\Chess.pdb
