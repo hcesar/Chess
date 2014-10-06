@@ -36,7 +36,7 @@ namespace System
                 if (value.Length == 0)
                     continue;
 
-                var converter = TypeDescriptor.GetConverter(prop.PropertyType);
+                var converter = TypeDescriptor.GetConverter(prop.PropertyType); 
                 try
                 {
                     prop.SetValue(entity, converter.ConvertFromString(value));
