@@ -26,7 +26,7 @@ namespace Chess.App
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
-            //var type = typeof(Sensors.TobiiEyeTracker.EyeTrackerSensor);
+            var type = typeof(Sensors.TobiiEyeTracker.EyeTrackerSensor);
             //this.TopMost = true;
             //this.FormBorderStyle = FormBorderStyle.None;
 
@@ -57,6 +57,9 @@ namespace Chess.App
 
         private void ShowTest(int index = 0)
         {
+            if (currentParticipant == null)
+                return;
+
             if (this.tests.Count <= index)
             {
                 if (index == 0)

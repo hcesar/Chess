@@ -53,10 +53,9 @@ namespace Chess.App
 
         public Board StartNew(Player whitePlayer, Player blackPlayer, string fenString = null)
         {
+            this.Clear();
             this.Focus();
             this.Visible = true;
-            if (this.Board != null)
-                ((IDisposable)this.Board).Dispose();
 
             if (fenString == null)
                 this.Board = new Board(whitePlayer, blackPlayer);
