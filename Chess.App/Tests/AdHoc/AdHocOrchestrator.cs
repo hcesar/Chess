@@ -9,7 +9,7 @@ namespace Chess.App.Tests.AdHoc
     class AdHocOrchestrator : TestOrchestrator
     {
         private AdHocTest test;
-        private string fileName;
+        private string fileName; 
         private System.Diagnostics.Stopwatch stopWatch;
         private Sensors.SensorContainer sensorContainer;
         private IO.ChessStreamWriter writer;

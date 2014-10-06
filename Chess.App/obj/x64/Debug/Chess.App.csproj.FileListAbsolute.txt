@@ -27,3 +27,4 @@ D:\Projetos\Chess\Chess.App\obj\x64\Debug\Chess.App.csproj.GenerateResource.Cach
 D:\Projetos\Chess\Chess.App\obj\x64\Debug\Chess.App.exe
 D:\Projetos\Chess\Chess.App\obj\x64\Debug\Chess.App.pdb
 D:\Projetos\Chess\Chess.App\bin\x64\Debug\TobiiGazeCore64.dll
+D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\Chess.App.exe.config
