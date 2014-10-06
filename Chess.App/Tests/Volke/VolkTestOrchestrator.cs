@@ -18,6 +18,15 @@ namespace Chess.App.Tests.Volk
 
         public override void Start()
         {
+            this.BoardControl.Visible = true;
+            this.BoardControl.ShowMessage(this.test.Instruction, StartTests);
+        }
+
+        private void StartTests()
+        {
+            var currentTest = this.test.Items[0];
+            this.BoardControl.SetSideInstruction(currentTest.Question);
+            var board = this.BoardControl.StartNew(new Player(), new Player(), currentTest.FEN);
         }
     }
 

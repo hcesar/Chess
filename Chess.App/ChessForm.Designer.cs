@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ChessForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -37,6 +36,7 @@
             this.fromNetworkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbSideInstructions = new System.Windows.Forms.Label();
             this.boardControl = new Chess.App.BoardControl();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.boardControl)).BeginInit();
@@ -106,13 +106,25 @@
             this.testsToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.testsToolStripMenuItem.Text = "Tests";
             // 
-            // boardCanvas
+            // lbSideInstructions
+            // 
+            this.lbSideInstructions.AutoSize = true;
+            this.lbSideInstructions.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbSideInstructions.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSideInstructions.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbSideInstructions.Location = new System.Drawing.Point(1274, 52);
+            this.lbSideInstructions.MaximumSize = new System.Drawing.Size(200, 0);
+            this.lbSideInstructions.MinimumSize = new System.Drawing.Size(200, 400);
+            this.lbSideInstructions.Name = "lbSideInstructions";
+            this.lbSideInstructions.Size = new System.Drawing.Size(200, 400);
+            this.lbSideInstructions.TabIndex = 2;
+            // 
+            // boardControl
             // 
             this.boardControl.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.boardControl.Image = ((System.Drawing.Image)(resources.GetObject("boardCanvas.Image")));
             this.boardControl.Location = new System.Drawing.Point(331, 24);
             this.boardControl.Margin = new System.Windows.Forms.Padding(0);
-            this.boardControl.Name = "boardCanvas";
+            this.boardControl.Name = "boardControl";
             this.boardControl.Size = new System.Drawing.Size(800, 800);
             this.boardControl.TabIndex = 1;
             this.boardControl.TabStop = false;
@@ -124,6 +136,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1486, 848);
+            this.Controls.Add(this.lbSideInstructions);
             this.Controls.Add(this.boardControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -150,6 +163,7 @@
         private System.Windows.Forms.ToolStripMenuItem fromFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromNetworkToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testsToolStripMenuItem;
+        public System.Windows.Forms.Label lbSideInstructions;
     }
 }
 

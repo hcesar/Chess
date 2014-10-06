@@ -63,15 +63,9 @@ namespace Chess.App
                 g.DrawEllipse(new Pen(Brushes.Blue, 3), 5, 5, 90, 90);
             mouseTracking.Image = imgMouseTracking;
 
-            var img = new Bitmap(this.Width, this.Height);
-            using (var g = Graphics.FromImage(img))
-            {
-                foreach (var square in Enum.GetValues(typeof(Square)).Cast<Square>())
-                    g.DrawImageUnscaled(Images.GetSquareImage(square), square.GetRectangle());
-            }
-
-            this.Image = img;
             this.Visible = false;
+
+            this.Image = null;
             base.InitLayout();
         }
 
@@ -94,8 +88,10 @@ namespace Chess.App
             whitePlayer.Turn += () => this.Invoke((Action)(() => this.Cursor = whitePlayer is HumanPlayer ? Cursors.Arrow : Cursors.WaitCursor));
             blackPlayer.Turn += () => this.Invoke((Action)(() => this.Cursor = blackPlayer is HumanPlayer ? Cursors.Arrow : Cursors.WaitCursor));
 
+            this.Image = new Bitmap(this.Width, this.Height);
             foreach (var square in Enum.GetValues(typeof(Square)).Cast<Square>())
                 DrawSquare(square);
+
             return this.Board;
         }
 
@@ -182,6 +178,11 @@ namespace Chess.App
             if (!mouseTracking.Visible)
                 mouseTracking.Visible = true;
             mouseTracking.Location = newPosition;
+        }
+
+        internal void SetSideInstruction(string text)
+        {
+            ((ChessForm)this.Parent).lbSideInstructions.Text = text;
         }
     }
 }

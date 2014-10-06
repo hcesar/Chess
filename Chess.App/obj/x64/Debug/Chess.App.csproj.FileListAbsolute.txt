@@ -31,6 +31,7 @@ D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\Engines\polyglot.exe
 D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\Engines\StockFish.exe
 D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\Engines\StockFish.ini
 D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\TobiiGazeCore64.dll
+D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\tests.volke.xml
 D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\tests.participants.xml
 D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\tests.xml
 D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\AdHocTests\Einstellung2.test
@@ -60,4 +61,3 @@ D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.Properties.Resources.
 D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.csproj.GenerateResource.Cache
 D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.exe
 D:\Projetos\GitHub\Chess\Chess.App\obj\x64\Debug\Chess.App.pdb
-D:\Projetos\GitHub\Chess\Chess.App\bin\x64\Debug\tests.volke.xml

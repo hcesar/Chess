@@ -12,3 +12,10 @@ D:\Projetos\Chess\Chess.Sensors\bin\Debug\Chess.pdb
 D:\Projetos\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.csprojResolveAssemblyReference.cache
 D:\Projetos\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.dll
 D:\Projetos\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.pdb
+D:\Projetos\GitHub\Chess\Chess.Sensors\bin\Debug\Chess.Sensors.dll
+D:\Projetos\GitHub\Chess\Chess.Sensors\bin\Debug\Chess.Sensors.pdb
+D:\Projetos\GitHub\Chess\Chess.Sensors\bin\Debug\Chess.dll
+D:\Projetos\GitHub\Chess\Chess.Sensors\bin\Debug\Chess.pdb
+D:\Projetos\GitHub\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.csprojResolveAssemblyReference.cache
+D:\Projetos\GitHub\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.dll
+D:\Projetos\GitHub\Chess\Chess.Sensors\obj\Debug\Chess.Sensors.pdb
