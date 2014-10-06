@@ -9,6 +9,7 @@ namespace Chess.App.Tests
     public abstract class TestOrchestrator
     {
         public BoardControl BoardControl { get; private set; }
+        public event EventHandler<TestResult> Finished;
 
         public TestOrchestrator(BoardControl boardControl)
         {
@@ -17,5 +18,11 @@ namespace Chess.App.Tests
 
 
         public abstract void Start();
+
+        protected void Finish(TestResult result)
+        {
+            if (this.Finished != null)
+                this.Finished(this, result);
+        }
     }
 }

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chess.App.Tests.Volk
+namespace Chess.App.Tests.Volke
 {
     public class VolkeTest : Test
     {

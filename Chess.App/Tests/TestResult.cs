@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chess.App.Tests
 {
-    public class TestCompleted
+    public class TestResult
     {
         public string Name { get; set; }
         public string RecordFile { get; set; }

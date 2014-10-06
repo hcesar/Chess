@@ -13,7 +13,6 @@ namespace Chess.App
 
         private PictureBox eyeTracking;
         private PictureBox mouseTracking;
-        private MessageDialog dlgMessage;
 
         public BoardControl()
         {
@@ -22,23 +21,6 @@ namespace Chess.App
 
         private void InitializeLayout()
         {
-            //
-            // dlgMessage
-            //
-            this.dlgMessage = new Chess.App.MessageDialog();
-            this.dlgMessage.Anchor = System.Windows.Forms.AnchorStyles.Left | AnchorStyles.Top;
-            this.dlgMessage.BackColor = System.Drawing.Color.Wheat;
-            this.dlgMessage.Location = new System.Drawing.Point(0, 300);
-            this.dlgMessage.Margin = new System.Windows.Forms.Padding(0);
-            this.dlgMessage.Name = "dlgMessage";
-            this.dlgMessage.Size = new System.Drawing.Size(800, 200);
-            this.dlgMessage.TabIndex = 1;
-            this.dlgMessage.TabStop = false;
-            this.dlgMessage.Visible = false;
-            this.dlgMessage.Text = "Teste";
-
-            this.Controls.Add(this.dlgMessage);
-
             eyeTracking = new PictureBox();
             this.Controls.Add(eyeTracking);
             eyeTracking.Size = new System.Drawing.Size(100, 100);
@@ -65,12 +47,13 @@ namespace Chess.App
 
             this.Visible = false;
 
-            this.Image = null;
+            this.Image = new Bitmap(this.Width, this.Height);
             base.InitLayout();
         }
 
         public Board StartNew(Player whitePlayer, Player blackPlayer, string fenString = null)
         {
+            this.Focus();
             this.Visible = true;
             if (this.Board != null)
                 ((IDisposable)this.Board).Dispose();
@@ -88,7 +71,6 @@ namespace Chess.App
             whitePlayer.Turn += () => this.Invoke((Action)(() => this.Cursor = whitePlayer is HumanPlayer ? Cursors.Arrow : Cursors.WaitCursor));
             blackPlayer.Turn += () => this.Invoke((Action)(() => this.Cursor = blackPlayer is HumanPlayer ? Cursors.Arrow : Cursors.WaitCursor));
 
-            this.Image = new Bitmap(this.Width, this.Height);
             foreach (var square in Enum.GetValues(typeof(Square)).Cast<Square>())
                 DrawSquare(square);
 
@@ -97,7 +79,10 @@ namespace Chess.App
 
         public void ShowMessage(string message, Action closeAction = null, Func<bool> closePredicate = null)
         {
-            this.dlgMessage.ShowMessage(message, closePredicate, closeAction);
+            var dialog = new MessageDialog();
+            dialog.Closing += (sender, e) => this.Controls.Remove(dialog);
+            this.Controls.Add(dialog);
+            dialog.ShowMessage(message, closePredicate, closeAction);
         }
 
         private void DrawSquare(Square square, bool selected = false)
@@ -180,9 +165,14 @@ namespace Chess.App
             mouseTracking.Location = newPosition;
         }
 
-        internal void SetSideInstruction(string text)
+
+        internal void Clear()
         {
-            ((ChessForm)this.Parent).lbSideInstructions.Text = text;
+            if (this.Board != null)
+                ((IDisposable)this.Board).Dispose();
+
+            this.Board = null;
+            this.Image = new Bitmap(this.Width, this.Height);
         }
     }
 }

@@ -13,6 +13,8 @@ namespace Chess.App
         private Func<bool> closePredicate;
 
         public override string Text { get { return this.lbMessage.Text; } set { this.lbMessage.Text = value; } }
+        public event EventHandler Closing;
+
 
         public MessageDialog()
         {
@@ -48,6 +50,16 @@ namespace Chess.App
             this.Controls.Add(this.btOk);
             this.Controls.Add(this.lbMessage);
             this.btOk.BringToFront();
+
+            this.Anchor = System.Windows.Forms.AnchorStyles.Left | AnchorStyles.Top;
+            this.BackColor = System.Drawing.Color.Wheat;
+            this.Location = new System.Drawing.Point(0, 300);
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.Name = "dlgMessage";
+            this.Size = new System.Drawing.Size(800, 200);
+            this.TabIndex = 1;
+            this.TabStop = false;
+            this.Visible = false;
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -70,6 +82,8 @@ namespace Chess.App
 
             if (this.closePredicate != null)
                 this.timer.Enabled = true;
+            
+            this.btOk.Focus();
         }
 
         private void btOk_Click(object sender, EventArgs e)
@@ -79,14 +93,18 @@ namespace Chess.App
 
         public void Close()
         {
-            if (this.closeAction != null)
-                this.closeAction();
-
             this.timer.Enabled = false;
-            this.closeAction = null;
             this.closePredicate = null;
 
             this.Visible = false;
+
+            if (this.closeAction != null)
+                this.closeAction();
+
+            this.closeAction = null;
+
+            if (this.Closing != null)
+                this.Closing(this, EventArgs.Empty);
         }
     }
 }

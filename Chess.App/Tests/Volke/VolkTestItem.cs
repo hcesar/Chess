@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chess.App.Tests.Volk
+namespace Chess.App.Tests.Volke
 {
     public class VolkeTestItem
     {
@@ -12,5 +12,6 @@ namespace Chess.App.Tests.Volk
         public string Question { get; set; }
         public bool IsCorrect { get; set; }
         public int QuestionLevel { get; set; }
+        public string Id { get; set; }
     }
 }

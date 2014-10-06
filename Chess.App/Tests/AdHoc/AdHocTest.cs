@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 
-namespace Chess.App.Tests
+namespace Chess.App.Tests.AdHoc
 {
     public class AdHocTest : Test
     {
@@ -28,7 +28,7 @@ namespace Chess.App.Tests
 
         public override TestOrchestrator GetOrchestrator(BoardControl boardControl)
         {
-            throw new NotImplementedException();
+            return new AdHocOrchestrator(boardControl, this);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Chess.App.Tests;
+using Chess.App.Tests.AdHoc;
 using Chess.IO;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,11 @@ namespace Chess.App
     {
         private SpectatorServer spectatorServer;
         private IList<Test> tests;
-        private int currentTestIndex = 0;
         private Participant currentParticipant;
-
 
         public ChessForm()
         {
             this.boardControl = new Chess.App.BoardControl();
-
             InitializeComponent();
         }
 
@@ -53,10 +51,20 @@ namespace Chess.App
             ShowTest();
         }
 
-        private void ShowTest()
+
+        private void ShowTest(int index = 0)
         {
-            var test = this.tests[this.currentTestIndex];
+            if (this.tests.Count <= index)
+            {
+                if (index == 0)
+                    return;
+
+                Participant.Update(currentParticipant);
+            }
+
+            var test = this.tests[index];
             var orchestrator = test.GetOrchestrator(this.boardControl);
+            orchestrator.Finished += (sender, result) => { currentParticipant.Tests.Add(result); this.ShowTest(index + 1); };
             orchestrator.Start();
         }
              

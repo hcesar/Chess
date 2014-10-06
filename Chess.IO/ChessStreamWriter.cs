@@ -71,7 +71,7 @@ namespace Chess.IO
             throw new InvalidOperationException("Sensor not found: " + sensorType.Name);
         }
 
-        void IDisposable.Dispose()
+        public void Dispose()
         {
             this.chessStream.ActionAvailable -= Persist;
             this.writer.Flush();
