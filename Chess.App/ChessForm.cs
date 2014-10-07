@@ -60,6 +60,9 @@ namespace Chess.App
             if (currentParticipant == null)
                 return;
 
+            if( index == 0 )
+                currentParticipant.Tests.Clear();
+
             if (this.tests.Count <= index)
             {
                 if (index == 0)
@@ -67,6 +70,7 @@ namespace Chess.App
 
                 Participant.Update(currentParticipant);
                 this.boardControl.Clear();
+                this.boardControl.ShowMessage("Teste finalizado!");
                 return;
             }
 

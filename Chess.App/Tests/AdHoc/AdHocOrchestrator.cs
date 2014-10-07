@@ -13,9 +13,11 @@ namespace Chess.App.Tests.AdHoc
         private System.Diagnostics.Stopwatch stopWatch;
         private Sensors.SensorContainer sensorContainer;
         private IO.ChessStreamWriter writer;
+        private DateTime startDate;
 
         public AdHocOrchestrator(BoardControl control, AdHocTest test) : base(control)
         {
+            this.startDate = DateTime.Now;
             this.test = test;
         }
 
@@ -48,7 +50,7 @@ namespace Chess.App.Tests.AdHoc
             this.writer.Dispose();
 
             var moves = board.History.Reverse().Select(i => new AdHocPieceMove(i.Source, i.Target)).ToList();
-            this.Finish(new AdHocTestResult(moves) { RecordFile = this.fileName, Elapsed = this.stopWatch.ElapsedMilliseconds });
+            this.Finish(new AdHocTestResult(moves) { RecordFile = this.fileName, Elapsed = this.stopWatch.ElapsedMilliseconds, StartDate = startDate });
         }
     }
 }

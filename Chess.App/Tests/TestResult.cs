@@ -11,10 +11,12 @@ namespace Chess.App.Tests
     [XmlInclude(typeof(Volke.VolkeTestResult))]
     public class TestResult
     {
-        public string Name { get; set; }
+        public string Id { get; set; }
         public string RecordFile { get; set; }
         public string Result { get; set; }
 
+        public DateTime StartDate { get; set; }
         public long Elapsed { get; set; }
+        public long Elapsed2 { get; set; }
     }
 }

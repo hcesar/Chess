@@ -20,9 +20,14 @@ namespace Chess.Sensors.TobiiEyeTracker
 
         public EyeTrackerSensor(Control boardControl)
         {
+            this.boardControl = boardControl;
+            new Thread(Start).Start();
+        }
+
+        private void Start()
+        {
             try
             {
-                this.boardControl = boardControl;
                 tracker = new EyeTracker(new Uri("tet-tcp://TX300-010104404713.local."));
 
                 //new Thread(tracker.RunEventLoop) { IsBackground = true }.Start();

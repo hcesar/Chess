@@ -63,7 +63,7 @@ namespace Chess.App
                 this.Board = new Board(whitePlayer, blackPlayer, fenString);
 
             this.Board.SquareChanged += square => DrawSquare(square);
-            this.Board.Check += (player) => { if (this.Board.CurrentPlayer is HumanPlayer) MessageBox.Show("Check!"); };
+            this.Board.Check += (player) => { if (this.Board != null && this.Board.CurrentPlayer is HumanPlayer) MessageBox.Show("Check!"); };
             this.Board.Checkmate += (player) => { MessageBox.Show("Checkmate!"); this.Cursor = Cursors.Arrow; };
             this.Board.Stalemate += (reason) => { MessageBox.Show("Stalemate: " + reason.GetDescription()); this.Cursor = Cursors.Arrow; };
 

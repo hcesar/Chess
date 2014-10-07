@@ -13,6 +13,7 @@ namespace Chess.App.Tests.Volke
 
         private IEnumerator<VolkeTestItem> testItems;
         private CurrentTest currentTest;
+        private System.Diagnostics.Stopwatch stopWatch;
 
         public VolkeTestOrchestrator(BoardControl boardControl, VolkeTest test)
             : base(boardControl)
@@ -26,7 +27,7 @@ namespace Chess.App.Tests.Volke
             this.result = new VolkeTestResult();
 
             this.BoardControl.Visible = true;
-            this.BoardControl.ShowMessage(this.test.Instruction, NextTest);
+            this.BoardControl.ShowMessage(this.test.Instruction, () => { result.StartDate = DateTime.Now; this.NextTest(); });
 
             var form = this.BoardControl.Parent;
             this.BoardControl.KeyDown += VolkeTestOrchestrator_KeyDown;
@@ -34,21 +35,24 @@ namespace Chess.App.Tests.Volke
 
         private void NextTest()
         {
+            this.stopWatch = System.Diagnostics.Stopwatch.StartNew();
             this.BoardControl.Clear();
 
             if (!this.testItems.MoveNext())
             {
+                this.result.Elapsed = (long)(DateTime.Now - this.result.StartDate).TotalMilliseconds;
                 this.Finish(this.result);
             }
             else
             {
-                this.BoardControl.ShowMessage(this.testItems.Current.Question, () => StartTest(this.currentTest));
+                DateTime now = DateTime.Now;
+                this.BoardControl.ShowMessage(this.testItems.Current.Question, () => StartTest(this.currentTest, now));
             }
         }
 
-        private void StartTest(CurrentTest currentTest)
+        private void StartTest(CurrentTest currentTest, DateTime startDate)
         {
-            this.currentTest = new CurrentTest(this.testItems.Current, this.BoardControl);
+            this.currentTest = new CurrentTest(this.testItems.Current, this.BoardControl, this.stopWatch.ElapsedMilliseconds, startDate);
         }
 
         void VolkeTestOrchestrator_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
@@ -60,7 +64,17 @@ namespace Chess.App.Tests.Volke
             this.BoardControl.Clear();
             this.currentTest.Dispose();
             string isCorrect = !(this.testItems.Current.IsCorrect ^ key == 's') ? "True" : "False";
-            result.VolkeTests.Add(new TestResult { Name = this.testItems.Current.Id, RecordFile = this.currentTest.RecordFile, Result = isCorrect, Elapsed = currentTest.Stopwatch.ElapsedMilliseconds });
+            var itemResult = new TestResult
+            {
+                Id = this.testItems.Current.Id,
+                StartDate = currentTest.StartDate,
+                RecordFile = this.currentTest.RecordFile,
+                Result = isCorrect,
+                Elapsed = currentTest.QuestionTime,
+                Elapsed2 = currentTest.Stopwatch.ElapsedMilliseconds
+            };
+
+            result.VolkeTests.Add(itemResult);
 
             NextTest();
         }
@@ -72,10 +86,14 @@ namespace Chess.App.Tests.Volke
             public VolkeTestItem Test { get; set; }
             public string RecordFile { get; private set; }
             public System.Diagnostics.Stopwatch Stopwatch { get; set; }
+            public long QuestionTime { get; set; }
+            public DateTime StartDate { get; set; }
 
 
-            public CurrentTest(VolkeTestItem test, BoardControl boardControl)
+            public CurrentTest(VolkeTestItem test, BoardControl boardControl, long questionTime, DateTime startDate)
             {
+                this.StartDate = startDate;
+                this.QuestionTime = questionTime;
                 this.Stopwatch = System.Diagnostics.Stopwatch.StartNew();
                 this.Test = test;
                 var board = boardControl.StartNew(new Player(), new Player(), test.FEN);
@@ -84,7 +102,6 @@ namespace Chess.App.Tests.Volke
                 this.RecordFile = "recorded-files\\" + Guid.NewGuid() + ".chess";
                 this.sensorContainer = new Sensors.SensorContainer(board, mouseSensor, new Sensors.TobiiEyeTracker.EyeTrackerSensor(boardControl));
                 this.writer = new IO.ChessStreamWriter(board, sensorContainer, this.RecordFile);
-
             }
 
             public void Dispose()
@@ -92,7 +109,6 @@ namespace Chess.App.Tests.Volke
                 this.sensorContainer.Stop();
                 this.writer.Dispose();
             }
-
         }
     }
 }
