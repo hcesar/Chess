@@ -104,7 +104,7 @@ namespace System
 
             int y = ((8 - rank) * 100);
             int x = (column * 100);
-            return new Rectangle(x, y, 100, 100);
+            return new Rectangle(x + 15, y, 100, 100);
         }
 
         public static int GetRank(this Square square)

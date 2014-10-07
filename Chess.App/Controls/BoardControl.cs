@@ -53,6 +53,9 @@ namespace Chess.App
 
         public Board StartNew(Player whitePlayer, Player blackPlayer, string fenString = null)
         {
+            this.Width = 850;
+            this.Height = 850;
+
             this.Clear();
             this.Focus();
             this.Visible = true;
@@ -92,11 +95,24 @@ namespace Chess.App
                 var rect = square.GetRectangle();
                 g.DrawImageUnscaled(Images.GetSquareImage(square, this.Board[square]), rect);
 
+                if (square.GetColumn() == 1)
+                {
+                    var loc = rect.Location;
+                    loc.Offset(-15, 40);
+                    g.DrawString(square.GetRank().ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
+                }
+
+                if (square.GetRank() == 1)
+                {
+                    var loc = rect.Location;
+                    loc.Offset(40, 105);
+                    g.DrawString(((char)('A' + (square.GetColumn() - 1))).ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
+                }
+
                 if (selected)
                 {
                     rect.Width -= 3;
                     rect.Height -= 3;
-                    rect.Offset(1, 1);
                     g.DrawRectangle(new Pen(Brushes.Green, 3), rect);
                 }
             }
