@@ -84,7 +84,7 @@ namespace System
         public static Square ToSquare(this Point point)
         {
             int rank = 7 - ((int)(point.Y) / 100);
-            int column = (int)(point.X) / 100;
+            int column = (int)(point.X-15) / 100;
 
             string square = ((char)('A' + column)).ToString() + (char)('1' + rank);
             if (!Enum.IsDefined(typeof(Square), square))
