@@ -3,12 +3,14 @@ using Chess.App.Tests.AdHoc;
 using Chess.IO;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace Chess.App
 {
@@ -125,12 +127,39 @@ namespace Chess.App
             var eyeTrackerSensor = new Sensors.TobiiEyeTracker.EyeTrackerSensor(this.boardControl);
             var sensorContainer = new Sensors.SensorContainer(board, mouseSensor, eyeTrackerSensor);
 
-            var writer = new IO.ChessStreamWriter(board, sensorContainer, DateTime.Now.ToString("yyyMMddmmss") + ".chess");
+            string fileName = DateTime.Now.ToString("yyyMMddmmss");
+            var writer = new IO.ChessStreamWriter(board, sensorContainer, fileName + ".chess");
+            StartGameXmlWriter(fileName, board);
 
             if (config.White.IsReady && config.Black.IsReady)
                 board.Start();
             else
                 this.boardControl.ShowMessage("Waiting for remote player", board.Start, () => config.White.IsReady && config.Black.IsReady);
+        }
+
+        private void StartGameXmlWriter(string fileName, Board board)
+        {
+            var xmlWriter = new StreamWriter(fileName + ".xml", false, System.Text.Encoding.UTF8);
+
+            xmlWriter.WriteLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<Game>");
+
+            long timestamp = 0;
+            Stopwatch sw = Stopwatch.StartNew();
+
+            this.boardControl.PiecePicked += (square) =>
+            {
+                timestamp = sw.ElapsedMilliseconds;
+            };
+
+            board.PieceMoved += (move) =>
+            {
+                xmlWriter.WriteLine("\t<Move source='{0}' target='{1}' selectionTimestamp='{2}' moveTimestamp='{3}' />", move.Source, move.Target, timestamp, sw.ElapsedMilliseconds);
+            };
+
+            board.GameEnded += () =>
+            {
+                xmlWriter.WriteLine("</Game>"); xmlWriter.Close();
+            };
         }
 
         private void fromNetworkToolStripMenuItem_Click(object sender, EventArgs e)

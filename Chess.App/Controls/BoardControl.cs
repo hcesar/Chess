@@ -14,6 +14,8 @@ namespace Chess.App
         private PictureBox eyeTracking;
         private PictureBox mouseTracking;
 
+        public event Action<Square> PiecePicked;
+
         public BoardControl()
         {
             this.InitializeLayout();
@@ -155,6 +157,9 @@ namespace Chess.App
             }
             else if (targetPiece != null && targetPiece.Player == this.Board.Turn)
             {
+                if (this.PiecePicked != null)
+                    PiecePicked(square);
+
                 this.SelectedPiece = targetPiece;
                 DrawSquare(square, true);
             }

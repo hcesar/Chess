@@ -94,6 +94,9 @@ namespace Chess
 
         public event StalemateHandler Stalemate;
 
+        public event Action GameEnded;
+
+
         #endregion Events
 
         #region Constructor
@@ -314,6 +317,10 @@ namespace Chess
 
             if (this.Checkmate != null)
                 this.Checkmate(this.Turn);
+
+            if (this.GameEnded != null)
+                this.GameEnded();
+
             this.Turn = (PlayerColor)(-1);
         }
 
@@ -326,6 +333,10 @@ namespace Chess
 
             if (this.Stalemate != null)
                 this.Stalemate(reason);
+
+            if (this.GameEnded != null)
+                this.GameEnded();
+
             this.Turn = (PlayerColor)(-1);
         }
 
