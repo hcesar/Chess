@@ -153,7 +153,8 @@ namespace Chess.App
 
             board.PieceMoved += (move) =>
             {
-                xmlWriter.WriteLine("\t<Move source='{0}' target='{1}' selectionTimestamp='{2}' moveTimestamp='{3}' />", move.Source, move.Target, timestamp, sw.ElapsedMilliseconds);
+                string capturedPiece = move.CapturedPiece != null ? move.CapturedPiece.ToString(false) : null;
+                xmlWriter.WriteLine("\t<Move source='{0}' target='{1}' selectionTimestamp='{2}' moveTimestamp='{3}' piece='{4}' capture='{5}' />", move.Source, move.Target, timestamp, sw.ElapsedMilliseconds, move.Piece.ToString(false), capturedPiece);
             };
 
             board.GameEnded += () =>
