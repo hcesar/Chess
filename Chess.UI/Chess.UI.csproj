@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chess.UI</RootNamespace>
+    <AssemblyName>Chess.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoardControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Images.cs" />
+    <Compile Include="LockedGraphics.cs" />
+    <Compile Include="MessageDialog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Chess\Chess.csproj">
+      <Project>{cb0ffbf8-54d2-4eb1-b28a-fedfb7b8c960}</Project>
+      <Name>Chess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackBishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackPawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackQueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackRook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Board.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteBishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhitePawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteQueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteRook.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

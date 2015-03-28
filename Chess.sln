@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22310.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chess.App", "Chess.App\Chess.App.csproj", "{FC019B46-946A-4C2D-A587-25F02B5B6711}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chess.ZTest", "Chess.ZTest\Chess.ZTest.csproj", "{A42FC411-E02E-4EAC-8486-A84B8AB790CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chess.Sensors.TobiiEyeTracker", "Chess.Sensors.TobiiEyeTracker\Chess.Sensors.TobiiEyeTracker.csproj", "{98F0EE06-F490-45EB-A3E3-AB34177E3CA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chess.UI", "Chess.UI\Chess.UI.csproj", "{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,14 @@ Global
 		{98F0EE06-F490-45EB-A3E3-AB34177E3CA1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98F0EE06-F490-45EB-A3E3-AB34177E3CA1}.Release|x64.ActiveCfg = Release|x64
 		{98F0EE06-F490-45EB-A3E3-AB34177E3CA1}.Release|x64.Build.0 = Release|x64
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Debug|x64.Build.0 = Debug|Any CPU
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Release|x64.ActiveCfg = Release|Any CPU
+		{BFCFBEC9-20B9-4A3D-A43E-11E37FC4B6E9}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
