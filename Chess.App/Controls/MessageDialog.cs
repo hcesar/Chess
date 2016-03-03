@@ -15,9 +15,19 @@ namespace Chess.App
         public override string Text { get { return this.lbMessage.Text; } set { this.lbMessage.Text = value; } }
         public event EventHandler Closing;
 
+        private int dgSizeX = 800;
+        private int dgSizeY = 200;
 
         public MessageDialog()
         {
+            InitializeComponent();
+        }
+
+        public MessageDialog(int dialogSizeX, int dialogSizeY)
+        {
+            this.dgSizeX = dialogSizeX;
+            this.dgSizeY = dialogSizeY;
+
             InitializeComponent();
         }
 
@@ -36,13 +46,13 @@ namespace Chess.App
             this.lbMessage.BackColor = Color.Transparent;
             this.lbMessage.Font = new System.Drawing.Font("Trebuchet MS", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMessage.ForeColor = Color.Brown;
-            this.lbMessage.Size = new Size(800, 200);
+            this.lbMessage.Size = new Size(dgSizeX, dgSizeY);
             this.lbMessage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbMessage.BorderStyle = BorderStyle.FixedSingle;
 
             this.btOk = new Button();
             this.btOk.Text = "OK";
-            this.btOk.Location = new Point(710, 150);
+            this.btOk.Location = new Point((dgSizeX-90), (dgSizeY-50));
             this.btOk.Size = new Size(80, 40);
             this.btOk.Click += btOk_Click;
             this.btOk.NotifyDefault(false);
@@ -53,10 +63,10 @@ namespace Chess.App
 
             this.Anchor = System.Windows.Forms.AnchorStyles.Left | AnchorStyles.Top;
             this.BackColor = System.Drawing.Color.Wheat;
-            this.Location = new System.Drawing.Point(0, 300);
+            this.Location = new System.Drawing.Point(0, ((400-(dgSizeY/2)) <= 0 ? 0 : (400-(dgSizeY/2))));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "dlgMessage";
-            this.Size = new System.Drawing.Size(800, 200);
+            this.Size = new System.Drawing.Size(dgSizeX, dgSizeY);
             this.TabIndex = 1;
             this.TabStop = false;
             this.Visible = false;

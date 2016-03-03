@@ -9,16 +9,10 @@ namespace Chess.Sensors
         public event SensorDataReceived SensorDataReceived;
 
         private List<Sensor> sensors = new List<Sensor>();
-        private Board board;
-
-        public SensorContainer(Board board)
+        
+        public SensorContainer( params Sensor[] sensors)
         {
-            this.board = board;
-        }
-
-        public SensorContainer(Board board, params Sensor[] sensors)
-        {
-            this.board = board;
+           // this.board = board;
             foreach (var sensor in sensors)
                 this.Add(sensor);
         }
@@ -31,7 +25,7 @@ namespace Chess.Sensors
 
         public void Add(Sensor sensor)
         {
-            sensor.SetBoard(this.board);
+            //sensor.SetBoard(this.board);
             lock (this.sensors)
                 this.sensors.Add(sensor);
 

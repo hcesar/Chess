@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Chess.App.Tests.AdHoc
 {
@@ -26,9 +27,14 @@ namespace Chess.App.Tests.AdHoc
             return new ComputerPlayer(this.AILevel < AILevel.Easy ? AILevel.Medium : this.AILevel);
         }
 
-        public override TestOrchestrator GetOrchestrator(BoardControl boardControl)
+        public override TestOrchestrator GetOrchestrator(Form parentForm, BoardControl boardControl, Sensors.SensorContainer sensorContainer)
         {
-            return new AdHocOrchestrator(boardControl, this);
+            return new AdHocOrchestrator(parentForm, boardControl, this);
+        }
+
+        public override TestOrchestrator GetOrchestrator(Form parentForm, BoardControl boardControl, int idParticipant, Sensors.SensorContainer sensorContainer)
+        {
+            return new AdHocOrchestrator(parentForm, boardControl, this);
         }
     }
 }

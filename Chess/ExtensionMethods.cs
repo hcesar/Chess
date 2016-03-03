@@ -55,6 +55,47 @@ namespace System
 
         #endregion Enum
 
+        #region Enumerator
+        public static bool SkipWhile<T>(this IEnumerator<T> enumerator, Predicate<T> predicate)
+        {
+            bool found = true;
+            while (predicate(enumerator.Current) )
+            {
+                found = enumerator.MoveNext();
+                if (!found)
+                    break;
+            }
+
+            return found;
+        }
+
+        public static IEnumerable<T> TakeWhile<T>(this IEnumerator<T> enumerator, Predicate<T> predicate)
+        {
+            while (predicate(enumerator.Current))
+            {
+                yield return enumerator.Current;
+                if (!enumerator.MoveNext())
+                    break;
+            }
+
+        }
+        #endregion Enumerator
+
+        #region IDisposable
+        public static TOutput Using<TInput, TOutput>(this TInput disposable, Func<TInput, TOutput> action)
+            where TInput : IDisposable
+        {
+            using (disposable)
+                return action(disposable);
+        }
+        public static void Using<TInput>(this TInput disposable, Action<TInput> action)
+           where TInput : IDisposable
+        {
+            using (disposable)
+                action(disposable);
+        }
+        #endregion IDisposable
+
         #region MoveDirection
 
         public static IEnumerable<MoveDirection> GetDiagonals(this MoveDirection direction)
@@ -80,11 +121,14 @@ namespace System
         #endregion PlayerColor
 
         #region Point
-
+        public static bool IsPositive(this Point point)
+        {
+            return point.X > 0 && point.Y > 0;
+        }
         public static Square ToSquare(this Point point)
         {
             int rank = 7 - ((int)(point.Y) / 100);
-            int column = (int)(point.X-15) / 100;
+            int column = (int)(point.X - 15) / 100;
 
             string square = ((char)('A' + column)).ToString() + (char)('1' + rank);
             if (!Enum.IsDefined(typeof(Square), square))

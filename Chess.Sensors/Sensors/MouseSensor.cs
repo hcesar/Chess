@@ -17,9 +17,9 @@ namespace Chess.Sensors
         protected override SensorData GetSensorData()
         {
             var point = (Point)this.BoardControl.Invoke((Delegate)(Func<object>)(() => this.BoardControl.PointToClient(Cursor.Position)));
-            var square = point.ToSquare();
-            if ((int)square == -1)
-                return null;
+            //var square = point.ToSquare();
+            //if ((int)square == -1)
+              //  return null;
 
             return new MouseSensorData(point);
         }

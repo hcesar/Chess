@@ -97,15 +97,7 @@ namespace Chess
 
         public override string ToString()
         {
-            return this.ToString(true);
-        }
-
-        public string ToString(bool withSquare)
-        {
-            if(withSquare)
-                return string.Format("{0}{1}({2})", this.Player, this.GetType().Name, this.Square);
-
-            return string.Format("{0}{1}", this.Player, this.GetType().Name);
+            return string.Format("{0}{1}({2})", this.Player, this.GetType().Name, this.Square);
         }
 
         internal void SetPlacement(Board board, FEN.PiecePlacement piecePlacement)

@@ -81,6 +81,7 @@
     <Compile Include="Delegates.cs" />
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="FEN.cs" />
+    <Compile Include="Images.cs" />
     <Compile Include="MoveDirection.cs" />
     <Compile Include="PieceMove.cs" />
     <Compile Include="Piece.cs" />
@@ -99,6 +100,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Tests.epd" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackBishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackPawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackQueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\BlackRook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Board.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteBishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteKnight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhitePawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteQueen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\WhiteRook.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

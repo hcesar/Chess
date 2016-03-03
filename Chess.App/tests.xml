@@ -4,10 +4,11 @@
   <Test>
     <Type>Volke</Type>
     <Name>Proficiency Test</Name>
-    <Instruction>Use as teclas [S] e [N] para responder as perguntas.</Instruction>
+    <Instruction>O teste que você irá realizar busca testar seus conhecimentos no jogo de Xadrez. A pontuação é baseada no número de questões respondidas corretamente, mas também leva-se em consideração o tempo levado para responder à questão. Lembre-se que a PERGUNTA SERÁ MOSTRADA APENAS UMA VEZ e O TEMPO DE LEITURA DA PERGUNTA NÃO É LEVADO EM CONSIDERAÇÃO. Use [ESPAÇO] para fechar a pergunta e, para responder, use a tecla [S] para SIM e [N] para NÃO.</Instruction>
     <TestsFile>tests.volke.xml</TestsFile>
   </Test>
 
+ <!--
   <Test>
     <Type>AdHoc</Type>
     <Name>Einsellung Effect 2</Name>
@@ -17,5 +18,5 @@
     <AILevel>Medium</AILevel>
     <PlayerColor>White</PlayerColor>
   </Test>
-
+-->
 </Tests>

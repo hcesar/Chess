@@ -18,9 +18,13 @@ namespace Chess.App.Tests
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Profession { get; set; }
+        public string HighestEducation { get; set; }
+        public string Area { get; set; }
         public int Age { get; set; }
         public Gender Gender { get; set; }
+        public Laterality Laterality { get; set; }
+        public ChessLevel ChessLevel { get; set; }
+        public string ELO { get; set; }
 
         [XmlElement(ElementName = "Tests")]
         public List<TestResult> Tests { get; set; }
@@ -80,6 +84,7 @@ namespace Chess.App.Tests
             public List<Participant> Items { get; set; }
         }
         #endregion ParticipantCollection
+
 
     }
 }

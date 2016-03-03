@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Chess.App.Tests.Volke
 {
@@ -32,9 +33,16 @@ namespace Chess.App.Tests.Volke
         {
         }
 
-        public override TestOrchestrator GetOrchestrator(BoardControl boardControl)
+        public override TestOrchestrator GetOrchestrator(Form parentForm, BoardControl boardControl, Sensors.SensorContainer sensorContainer)
         {
-            return new VolkeTestOrchestrator(boardControl, this);
+            return new VolkeTestOrchestrator(parentForm, boardControl, this, 0, sensorContainer);
         }
-    }   
+
+        public override TestOrchestrator GetOrchestrator(Form parentForm, BoardControl boardControl, int idParticipant, Sensors.SensorContainer sensorContainer)
+        {
+            return new VolkeTestOrchestrator(parentForm, boardControl, this, idParticipant, sensorContainer);
+        }
+
+
+    }
 }

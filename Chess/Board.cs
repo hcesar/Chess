@@ -1,6 +1,7 @@
 ﻿using Chess.Pieces;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 
 namespace Chess
@@ -93,9 +94,6 @@ namespace Chess
         public event CheckHandler Checkmate;
 
         public event StalemateHandler Stalemate;
-
-        public event Action GameEnded;
-
 
         #endregion Events
 
@@ -190,6 +188,81 @@ namespace Chess
                 this.OnStalemate(StalemateReason.NoMoveAvailable);
 
             return true;
+        }
+
+        public Bitmap Draw()
+        {
+            var img = new Bitmap(850, 850);
+            Draw(img);
+            return img;
+        }
+        public Bitmap Draw(int width, int height)
+        {
+            if (width < 850) throw new ArgumentException("", "width");
+            if (height < 850) throw new ArgumentException("", "height");
+
+            var img = new Bitmap(width, height);
+            Draw(img);
+            return img;
+        }
+        public void Draw(Image image)
+        {
+            using (var g = Graphics.FromImage(image))
+            {
+                g.FillRectangle(Brushes.Black, 0, 0, image.Width, image.Height);
+
+                foreach (var square in Enum.GetValues(typeof(Square)).Cast<Square>())
+                {
+                    var rect = square.GetRectangle();
+                    g.DrawImageUnscaled(Images.GetSquareImage(square, this[square]), rect);
+
+                    if (square.GetColumn() == 1)
+                    {
+                        var loc = rect.Location;
+                        loc.Offset(-15, 40);
+                        g.DrawString(square.GetRank().ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
+                    }
+
+                    if (square.GetRank() == 1)
+                    {
+                        var loc = rect.Location;
+                        loc.Offset(40, 105);
+                        g.DrawString(((char)('a' + (square.GetColumn() - 1))).ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
+                    }
+                }
+            }
+        }
+
+        public void Draw(Image image, Square square, bool monochrome = false)
+        {
+            using (var g = Graphics.FromImage(image))
+                Draw(g, square, monochrome);
+        }
+        public void Draw(Graphics graphics, Square square, bool monochrome = false)
+        {
+            var rect = square.GetRectangle();
+            if (monochrome)
+                graphics.DrawImageUnscaled(Grayscale(Images.GetSquareImage(square, this[square])), rect);
+            else
+                graphics.DrawImageUnscaled(Images.GetSquareImage(square, this[square]), rect);
+        }
+
+        public Image Grayscale(Image img)
+        {
+            Bitmap temp = (Bitmap)img;
+            Bitmap bmap = (Bitmap)temp.Clone();
+            Color c;
+            for (int i = 0; i < bmap.Width; i++)
+            {
+                for (int j = 0; j < bmap.Height; j++)
+                {
+                    c = bmap.GetPixel(i, j);
+                    byte gray = (byte)(.299 * c.R + .587 * c.G + .114 * c.B);
+
+                    bmap.SetPixel(i, j, Color.FromArgb(gray, gray, gray));
+                }
+            }
+            return (Bitmap)bmap.Clone();
         }
 
         private void MoveCore(PieceMove move, bool raiseEvent)
@@ -317,10 +390,6 @@ namespace Chess
 
             if (this.Checkmate != null)
                 this.Checkmate(this.Turn);
-
-            if (this.GameEnded != null)
-                this.GameEnded();
-
             this.Turn = (PlayerColor)(-1);
         }
 
@@ -333,10 +402,6 @@ namespace Chess
 
             if (this.Stalemate != null)
                 this.Stalemate(reason);
-
-            if (this.GameEnded != null)
-                this.GameEnded();
-
             this.Turn = (PlayerColor)(-1);
         }
 
@@ -364,6 +429,12 @@ namespace Chess
             return FEN.FromBoard(this);
         }
 
+        public static Board Load(string fen, Player white = null, Player black = null)
+        {
+            return new Board(white ?? new Player(), black ?? new Player(), fen);
+        }
         #endregion Methods
+
+
     }
 }

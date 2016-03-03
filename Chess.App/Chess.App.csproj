@@ -54,6 +54,29 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>chess_lab.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,6 +90,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\EEG.cs" />
+    <Compile Include="ProxiedMemoryStream.cs" />
+    <Compile Include="Report\Report.cs" />
+    <Compile Include="SidePlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SidePlayer.Designer.cs">
+      <DependentUpon>SidePlayer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TestContainer.cs" />
     <Compile Include="Tests\AdHoc\AdHocOrchestrator.cs" />
     <Compile Include="Tests\AdHoc\AdHocTest.cs" />
     <Compile Include="Controls\FormExtensionMethods.cs" />
@@ -110,15 +143,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Tests\AdHoc\AdHocTestResult.cs" />
     <Compile Include="Tests\AdHoc\AdHocPieceMove.cs" />
+    <Compile Include="Tests\ChessLevel.cs" />
+    <Compile Include="Tests\Laterality.cs" />
     <Compile Include="Tests\Test.cs" />
     <Compile Include="Tests\Gender.cs" />
     <Compile Include="Tests\Participant.cs" />
     <Compile Include="Tests\TestResult.cs" />
     <Compile Include="Tests\TestOrchestrator.cs" />
+    <Compile Include="Tests\Volke\Filter\Filter.cs" />
+    <Compile Include="Tests\Volke\Filter\Triangular.cs" />
+    <Compile Include="Tests\Volke\Filter\WeightBase.cs" />
+    <Compile Include="Tests\Volke\Filter\WeightOOBase.cs" />
+    <Compile Include="Tests\Volke\Filter\WeightOOTriangular.cs" />
+    <Compile Include="Tests\Volke\Filter\WeightProcessor.cs" />
     <Compile Include="Tests\Volke\VolkeTestResult.cs" />
+    <Compile Include="Tests\Volke\VolkePlayer.cs" />
+    <Compile Include="Tests\Volke\VolkeRecorder.cs" />
     <Compile Include="Tests\Volke\VolkTestItem.cs" />
     <Compile Include="Tests\Volke\VolkTest.cs" />
     <Compile Include="Tests\Volke\VolkTestOrchestrator.cs" />
+    <Compile Include="TrackingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Content Include="Calibration.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="ChessForm.resx">
       <DependentUpon>ChessForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +190,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SidePlayer.resx">
+      <DependentUpon>SidePlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="AdHocTests\Einstellung2.test">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -148,6 +200,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </None>
+    <Content Include="chess_lab.ico" />
     <Content Include="tests.volke.xml">
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

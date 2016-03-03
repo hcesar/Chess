@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,9 +10,12 @@ namespace Chess.App
 {
     public static class FormExtensions
     {
-        public static void Invoke(this Form form, Action action)
+        public static void Invoke(this Form form, Action action, bool newThread = false)
         {
-            form.Invoke((Delegate)action);
+            if (newThread)
+                new Thread(() => form.Invoke((Delegate)action)).Start();
+            else
+                form.Invoke((Delegate)action);
         }
 
         public static TReturn Invoke<TReturn>(this Form form, Func<TReturn> func, params object[] args)

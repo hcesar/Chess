@@ -3,19 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Chess.App.Tests.AdHoc
 {
     class AdHocOrchestrator : TestOrchestrator
     {
         private AdHocTest test;
-        private string fileName; 
+        private string fileName;
         private System.Diagnostics.Stopwatch stopWatch;
         private Sensors.SensorContainer sensorContainer;
         private IO.ChessStreamWriter writer;
         private DateTime startDate;
 
-        public AdHocOrchestrator(BoardControl control, AdHocTest test) : base(control)
+        public AdHocOrchestrator(Form parentForm, BoardControl control, AdHocTest test)
+            : base(parentForm, control)
         {
             this.startDate = DateTime.Now;
             this.test = test;
@@ -35,7 +37,7 @@ namespace Chess.App.Tests.AdHoc
             var board = this.BoardControl.StartNew(test.GetPlayer(PlayerColor.White), test.GetPlayer(PlayerColor.Black), test.FEN);
 
             var mouseSensor = new Sensors.MouseSensor(this.BoardControl);
-            this.sensorContainer = new Sensors.SensorContainer(board, mouseSensor, new Sensors.TobiiEyeTracker.EyeTrackerSensor(this.BoardControl));
+            this.sensorContainer = new Sensors.SensorContainer(mouseSensor, new Sensors.TobiiEyeTracker.EyeTrackerSensor(this.BoardControl));
             this.fileName = "recorded-files\\" + Guid.NewGuid() + ".chess";
             this.writer = new IO.ChessStreamWriter(board, sensorContainer, fileName);
 
@@ -50,7 +52,7 @@ namespace Chess.App.Tests.AdHoc
             this.writer.Dispose();
 
             var moves = board.History.Reverse().Select(i => new AdHocPieceMove(i.Source, i.Target)).ToList();
-            this.Finish(new AdHocTestResult(moves) { RecordFile = this.fileName, Elapsed = this.stopWatch.ElapsedMilliseconds, StartDate = startDate });
+            this.Finish(new AdHocTestResult(moves) { RecordFile = this.fileName, ElapsedQuestion = this.stopWatch.ElapsedMilliseconds, StartDate = startDate });
         }
     }
 }

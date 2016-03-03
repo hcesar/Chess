@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
 
 namespace Chess.App.Tests
@@ -14,7 +15,10 @@ namespace Chess.App.Tests
 
         public string Instruction { get; set; }
 
-        public abstract TestOrchestrator GetOrchestrator(BoardControl boardControl);
+        public abstract TestOrchestrator GetOrchestrator(Form parentForm, BoardControl boardControl, Sensors.SensorContainer sensorContainer);
+
+        public abstract TestOrchestrator GetOrchestrator(Form parentForm, BoardControl boardControl, int idParticipant, Sensors.SensorContainer sensorContainer);
+
 
 
         public void OnPreInit(BoardControl boardControl)

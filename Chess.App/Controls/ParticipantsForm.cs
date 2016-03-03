@@ -24,7 +24,8 @@ namespace Chess.App
         private void btnNewParticipant_Click(object sender, EventArgs e)
         {
             var participant = this.OpenDialog<NewParticipantForm, Participant>();
-            Participant.Insert(participant);
+            if (participant != null)
+                Participant.Insert(participant);
             this.LoadParticipants();
         }
 

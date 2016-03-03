@@ -10,7 +10,6 @@ namespace Chess.Sensors
                                                     .SelectMany(i => i.GetTypes().Where(type => !type.IsAbstract && type.IsSubclassOf(typeof(Sensor)) || type.IsSubclassOf(typeof(PassiveSensor))))
                                                     .ToList();
 
-        protected Board Board { get; private set; }
 
         public event Action<SensorData> DataAvailable;
 
@@ -23,6 +22,9 @@ namespace Chess.Sensors
 
         protected void OnDataAvailable(SensorData data)
         {
+            if (!this.IsRunning)
+                return;
+
             lock (this)
             {
                 if (this.DataAvailable != null)
@@ -30,15 +32,7 @@ namespace Chess.Sensors
             }
         }
 
-        internal void SetBoard(Board board)
-        {
-            if (this.Board != null)
-                throw new InvalidOperationException("Board already set.");
-
-            this.Board = board;
-        }
-
-        internal void Stop()
+        public void Stop()
         {
             this.IsRunning = false;
         }

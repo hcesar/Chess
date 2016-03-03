@@ -52,9 +52,28 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -82,6 +101,14 @@
     <Compile Include="ServerDiscovery.cs" />
     <Compile Include="SpectatorClient.cs" />
     <Compile Include="SpectatorServer.cs" />
+    <Compile Include="VolkeTest\VolkeEyeSensorMessage.cs" />
+    <Compile Include="VolkeTest\VolkeMessage.cs" />
+    <Compile Include="VolkeTestReader.cs" />
+    <Compile Include="VolkeTest\VolkeMouseSensor.cs" />
+    <Compile Include="VolkeTest\VolkeQuestionMessage.cs" />
+    <Compile Include="VolkeTest\VolkeTestItem.cs" />
+    <Compile Include="VolkeTest\VolkeTestStartMessage.cs" />
+    <Compile Include="VolkeTest\VolkeTestSummary.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

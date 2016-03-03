@@ -5,7 +5,7 @@ using System.IO.Compression;
 
 namespace Chess.IO
 {
-    public class ChessStreamReader
+    public class ChessStreamReader : IDisposable
     {
         private Stream stream;
         private BinaryReader reader;
@@ -27,7 +27,8 @@ namespace Chess.IO
             if (this.stream is System.Net.Sockets.NetworkStream)
                 this.reader = new BinaryReader(this.stream);
             else
-                this.reader = new BinaryReader(new GZipStream(this.stream, CompressionMode.Decompress));
+                this.reader = new BinaryReader(this.stream);
+                //this.reader = new BinaryReader(new GZipStream(this.stream, CompressionMode.Decompress));
         }
 
         public ChessAction ReadAction()
@@ -61,6 +62,26 @@ namespace Chess.IO
             return action;
         }
 
+        public IList<Chess.Sensors.SensorDataEntry<TSensorData>> ReadAllSensorData<TSensorData>() where TSensorData : Chess.Sensors.SensorData
+        {
+            int timeFrame = 0;
+            var ret = new List<Chess.Sensors.SensorDataEntry<TSensorData>>();
+
+            foreach (var action in ReadAllActions())
+            {
+                timeFrame += action.TimeDelay;
+                if ((ChessActionOpCode)action.OpCode == ChessActionOpCode.SensorAction)
+                {
+                    var sensorAction = action as SensorAction;
+                    if (sensorAction.Data is TSensorData)
+                        ret.Add(new Chess.Sensors.SensorDataEntry<TSensorData>(timeFrame, sensorAction.Data as TSensorData));
+                }
+            }
+
+            return ret;
+        }
+
+
         public IEnumerable<ChessAction> ReadAllActions()
         {
             ChessAction action = null;
@@ -70,6 +91,19 @@ namespace Chess.IO
                 action = this.ReadAction();
                 yield return action;
             }
+        }
+
+        private enum ChessActionOpCode
+        {
+            StartAction = 1,
+            MoveAction = 2,
+            SensorAction = 3,
+            EndGameAction = 4
+        }
+
+        public void Dispose()
+        {
+            this.stream.Dispose();
         }
     }
 }

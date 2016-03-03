@@ -47,20 +47,27 @@ namespace Chess.Sensors.TobiiEyeTracker
             }
         }
 
+
+
         private void EyeTrackerGazeData(object sender, GazeDataEventArgs e)
         {
             var gazeData = e.GazeData;
 
-            var point = e.GazeData.Left.GazePointOnDisplayNormalized;
-            var p1 = new Point((int)(point.X * Screen.PrimaryScreen.WorkingArea.Width), (int)(point.Y * Screen.PrimaryScreen.WorkingArea.Height));
+            var point1 = e.GazeData.Left.GazePointOnDisplayNormalized;
+            var point2 = e.GazeData.Right.GazePointOnDisplayNormalized;
+            var p1 = new Point((int)(point1.X * Screen.PrimaryScreen.WorkingArea.Width), (int)(point1.Y * Screen.PrimaryScreen.WorkingArea.Height));
+            var p2 = new Point((int)(point2.X * Screen.PrimaryScreen.WorkingArea.Width), (int)(point2.Y * Screen.PrimaryScreen.WorkingArea.Height));
 
             //var p1 = new Point((int)gazeData.Left.GazePointOnDisplayNormalized.X, (int)gazeData.Left.GazePointOnDisplayNormalized.Y);
             p1 = (Point)this.boardControl.Invoke((Delegate)(Func<object>)(() => this.boardControl.PointToClient(p1)));
+            p2 = (Point)this.boardControl.Invoke((Delegate)(Func<object>)(() => this.boardControl.PointToClient(p2)));
 
             //var p2 = new Point((int)gazeData.Right.GazePointOnDisplayNormalized.X, (int)gazeData.Right.GazePointOnDisplayNormalized.Y);
             //p2 = (Point)this.boardControl.Invoke((Delegate)(Func<object>)(() => this.boardControl.PointToClient(p2)));
 
-            this.OnDataAvailable(new EyeTrackerSensorData(p1, p1));
+            //System.Diagnostics.Debug.Write("\r"+ p1);
+
+            this.OnDataAvailable(new EyeTrackerSensorData(p1, p2));
         }
 
         private void EyeTrackerError(object sender, EyeTrackerErrorEventArgs e)

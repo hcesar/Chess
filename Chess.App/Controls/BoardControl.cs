@@ -11,10 +11,13 @@ namespace Chess.App
 
         public Board Board { get; private set; }
 
-        private PictureBox eyeTracking;
-        private PictureBox mouseTracking;
+        private TrackingControl eyeTracking;
+        private TrackingControl mouseTracking;
 
-        public event Action<Square> PiecePicked;
+       
+
+        public event Action<Board> GameStarted;
+        public event Action<string> MessageShowed;
 
         public BoardControl()
         {
@@ -23,18 +26,20 @@ namespace Chess.App
 
         private void InitializeLayout()
         {
-            eyeTracking = new PictureBox();
+            eyeTracking = new TrackingControl();
             this.Controls.Add(eyeTracking);
             eyeTracking.Size = new System.Drawing.Size(100, 100);
             eyeTracking.BackColor = Color.Transparent;
             eyeTracking.BringToFront();
+            eyeTracking.Color = Color.Red;
             eyeTracking.Visible = false;
 
-            mouseTracking = new PictureBox();
+            mouseTracking = new TrackingControl();
             this.Controls.Add(mouseTracking);
             mouseTracking.Size = new System.Drawing.Size(100, 100);
             mouseTracking.BackColor = Color.Transparent;
             mouseTracking.BringToFront();
+            mouseTracking.Color = Color.Green;
             mouseTracking.Visible = false;
 
             var imgEyeTracking = new Bitmap(eyeTracking.Width, eyeTracking.Height);
@@ -55,11 +60,14 @@ namespace Chess.App
 
         public Board StartNew(Player whitePlayer, Player blackPlayer, string fenString = null)
         {
+            this.CloseDialog();
+
+
             this.Width = 850;
             this.Height = 850;
 
             this.Clear();
-            this.Focus();
+            //this.Focus();
             this.Visible = true;
 
             if (fenString == null)
@@ -78,17 +86,35 @@ namespace Chess.App
             foreach (var square in Enum.GetValues(typeof(Square)).Cast<Square>())
                 DrawSquare(square);
 
+            if (this.GameStarted != null)
+                this.GameStarted(this.Board);
+
             return this.Board;
         }
 
-        public void ShowMessage(string message, Action closeAction = null, Func<bool> closePredicate = null)
+        public void ShowMessage(string message, Action closeAction = null, Func<bool> closePredicate = null, int dgSizeX = 800, int dgSizeY = 200)
         {
-            var dialog = new MessageDialog();
+            this.CloseDialog();
+
+            var dialog = new MessageDialog(dgSizeX, dgSizeY);
             dialog.Closing += (sender, e) => this.Controls.Remove(dialog);
             this.Controls.Add(dialog);
             dialog.ShowMessage(message, closePredicate, closeAction);
+
+            if (this.MessageShowed != null)
+                this.MessageShowed(message);
         }
 
+        public void CloseDialog()
+        {
+            var dialog = this.Controls.OfType<MessageDialog>().FirstOrDefault();
+            if (dialog != null)
+            {
+                this.Controls.Remove(dialog);
+                dialog.Close();                
+            }
+
+        }
         private void DrawSquare(Square square, bool selected = false)
         {
             using (var lg = this.Image.GetGraphics())
@@ -101,14 +127,14 @@ namespace Chess.App
                 {
                     var loc = rect.Location;
                     loc.Offset(-15, 40);
-                    g.DrawString(square.GetRank().ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
+                    //g.DrawString(square.GetRank().ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
                 }
 
                 if (square.GetRank() == 1)
                 {
                     var loc = rect.Location;
                     loc.Offset(40, 105);
-                    g.DrawString(((char)('A' + (square.GetColumn() - 1))).ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
+                    //g.DrawString(((char)('a' + (square.GetColumn() - 1))).ToString(), new Font("Arial", 10, FontStyle.Bold), Brushes.White, loc);
                 }
 
                 if (selected)
@@ -157,9 +183,6 @@ namespace Chess.App
             }
             else if (targetPiece != null && targetPiece.Player == this.Board.Turn)
             {
-                if (this.PiecePicked != null)
-                    PiecePicked(square);
-
                 this.SelectedPiece = targetPiece;
                 DrawSquare(square, true);
             }
@@ -193,6 +216,17 @@ namespace Chess.App
 
             this.Board = null;
             this.Image = new Bitmap(this.Width, this.Height);
+        }
+
+        public static Bitmap GetBoardImage(string fen, bool withCellIndentity = true)
+        {
+            var ctrl = new BoardControl();
+            ctrl.StartNew(new Player(), new Player(), fen);
+            ctrl.BackColor = Color.Black;
+
+            var bmp = new Bitmap(850, 850);
+            ctrl.DrawToBitmap(bmp, new Rectangle(Point.Empty, Size.Add(bmp.Size, new Size(-15, -15))));
+            return bmp;
         }
     }
 }

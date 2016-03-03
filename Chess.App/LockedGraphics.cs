@@ -32,6 +32,7 @@ namespace Chess.App
         void IDisposable.Dispose()
         {
             Monitor.Exit(this.image);
+            this.Graphics.Dispose();
         }
     }
 }
