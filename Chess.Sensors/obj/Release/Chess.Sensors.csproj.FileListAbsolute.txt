@@ -1,7 +1,0 @@
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\bin\Release\Chess.Sensors.dll
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\bin\Release\Chess.Sensors.pdb
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\bin\Release\Chess.dll
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\bin\Release\Chess.pdb
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\obj\Release\Chess.Sensors.csprojResolveAssemblyReference.cache
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\obj\Release\Chess.Sensors.dll
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess.Sensors\obj\Release\Chess.Sensors.pdb

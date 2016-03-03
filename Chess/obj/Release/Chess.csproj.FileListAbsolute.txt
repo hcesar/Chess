@@ -1,4 +1,0 @@
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\bin\Release\Chess.dll
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\bin\Release\Chess.pdb
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\obj\Release\Chess.dll
-D:\Henrique\Dropbox\FEI\...Dissertação\Chess.Game\Chess.Game\Chess\obj\Release\Chess.pdb
