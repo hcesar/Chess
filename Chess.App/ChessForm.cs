@@ -33,19 +33,29 @@ namespace Chess.App
 
         private void Form1_Load(object sender, System.EventArgs e)
         {
+            try
+            {
+                FormLoad();
+            }
+            catch
+            {
+            }
+        }
+
+        void FormLoad()
+        {
+            this.WindowState = FormWindowState.Maximized;
             var type = typeof(Sensors.TobiiEyeTracker.EyeTrackerSensor);
-            this.TopMost = true;
+            this.TopMost = false;
+            this.sidePlayer.Invoke(() => sidePlayer.TopMost = true);
             this.FormBorderStyle = FormBorderStyle.None;
 
             MaximizeToSecondaryMonitor();
 
             this.menuStrip1.Visible = false;
-            this.WindowState = FormWindowState.Maximized;
             Screen myScreen = Screen.FromControl(this);
             this.boardControl.Size = new Size(800, 800);
             this.boardControl.Location = new Point((myScreen.WorkingArea.Width - boardControl.Width) / 2, (myScreen.WorkingArea.Height - boardControl.Height) / 2 + 10);
-
-
 
             /*
             var tests = System.IO.Directory.EnumerateFiles("AdHocTests", "*.test").Select(i => new AdHocTest(System.IO.File.OpenRead(i))).ToList();
@@ -238,7 +248,7 @@ namespace Chess.App
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
-            this.menuStrip1.Visible = e.Y < 30;
+            //this.menuStrip1.Visible = e.Y < 30;
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)

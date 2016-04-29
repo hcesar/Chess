@@ -37,7 +37,7 @@
             // 
             // btnNewTest
             // 
-            this.btnNewTest.Location = new System.Drawing.Point(1000, 12);
+            this.btnNewTest.Location = new System.Drawing.Point(20, 21);
             this.btnNewTest.Name = "btnNewTest";
             this.btnNewTest.Size = new System.Drawing.Size(298, 30);
             this.btnNewTest.TabIndex = 2;
@@ -47,7 +47,7 @@
             // 
             // btnCalibration
             // 
-            this.btnCalibration.Location = new System.Drawing.Point(1000, 65);
+            this.btnCalibration.Location = new System.Drawing.Point(522, 21);
             this.btnCalibration.Name = "btnCalibration";
             this.btnCalibration.Size = new System.Drawing.Size(298, 30);
             this.btnCalibration.TabIndex = 3;
@@ -57,9 +57,8 @@
             // 
             // boardControl
             // 
-            this.boardControl.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.boardControl.Image = ((System.Drawing.Image)(resources.GetObject("boardControl.Image")));
-            this.boardControl.Location = new System.Drawing.Point(25, 9);
+            this.boardControl.Location = new System.Drawing.Point(20, 76);
             this.boardControl.Margin = new System.Windows.Forms.Padding(0);
             this.boardControl.Name = "boardControl";
             this.boardControl.Size = new System.Drawing.Size(800, 800);
@@ -71,7 +70,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 818);
+            this.ClientSize = new System.Drawing.Size(844, 885);
             this.Controls.Add(this.btnCalibration);
             this.Controls.Add(this.btnNewTest);
             this.Controls.Add(this.boardControl);

@@ -27,6 +27,7 @@ namespace Chess.App
         {
             InitializeComponent();
             //this.Enabled = false;
+            this.TopMost = true;
             this.boardControl.BackColor = System.Drawing.Color.Black;
             this.KeyPreview = true;
         }
