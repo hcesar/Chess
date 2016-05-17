@@ -23,7 +23,7 @@ namespace Chess.Processing
                 //defaultArgs = "summary participants.xml result.csv -tpath .\\chessfiles";
 
                 //defaultArgs = "summary participants.xml -d -xp 7,8,14,17,28,31 -tpath chessfiles";
-                defaultArgs = "heatmap chessfiles -p 2,3,4,5,10 -w -lpf -t 1 -r 80 -sigma 4,5 -saliency";
+                //defaultArgs = "heatmap chessfiles -p 2,3,4,5,10 -w -lpf -t 1 -r 80 -sigma 4,5 -saliency";
             }
            
             if (defaultArgs != null)

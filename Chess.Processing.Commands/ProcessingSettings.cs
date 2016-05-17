@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Chess.Processing
 {
-    class ProcessingSettings
+    internal class ProcessingSettings
     {
-        public const string OutputDirectory = @"D:\ChessLab\Output";
+        public static string OutputDirectory
+        {
+            get
+            {
+                return System.Configuration.ConfigurationManager.AppSettings["OutputFolder"];
+            }
+        }
     }
 }

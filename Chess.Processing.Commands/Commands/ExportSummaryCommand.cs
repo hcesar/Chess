@@ -110,10 +110,10 @@ namespace Chess.Processing.Commands
             if (error)
                 return;
 
-            if (!Directory.Exists("output"))
-                Directory.CreateDirectory("output");
+            if (!Directory.Exists(ProcessingSettings.OutputDirectory))
+                Directory.CreateDirectory(ProcessingSettings.OutputDirectory);
 
-            var output = Path.Combine("output", args.OutputFile ?? Path.GetFileNameWithoutExtension(args.InputFile) + ".csv");
+            var output = Path.Combine(ProcessingSettings.OutputDirectory, args.OutputFile ?? Path.GetFileNameWithoutExtension(args.InputFile) + ".csv");
             File.WriteAllText(output, sb.ToString(), Encoding.UTF8);
             Log.Information("Done!");
         }

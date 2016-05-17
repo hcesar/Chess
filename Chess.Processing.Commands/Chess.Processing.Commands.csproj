@@ -82,6 +82,7 @@
       <HintPath>..\packages\Accord.Video.FFMPEG.3.0.2\lib\net45\Accord.Video.FFMPEG.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
